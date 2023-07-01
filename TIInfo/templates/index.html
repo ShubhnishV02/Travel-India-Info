@@ -114,69 +114,67 @@
         {% comment %} check out some famous places {% endcomment %}
 
         <div class="container my-2 mb-4 mx-2">
-            <h1> Check out some famous places</h1>
+            <h1 class="text-center me-5">Check out some famous places</h1>
         </div>
+        
         <div class="container d-flex">
+            <div class="container row justify-content-center">           <!--row class is used to create a row to hold the columns & justify-content-center class on the row element is used to horizontally center the columns within the row.-->
+                    <div class="card mx-2 my-3 p-0 text-center" style="width: 27.5rem;">
 
-            <div class="card mx-2 my-3" style="width: 36.5rem;">
-                <div class="card-body p-0 pb-3">
-                    <img src="/static/img/Kedarnath.jpg" width="100%" height="80%">
-                    <div class="container overlap-heading">
-                        <h5 class="card-title pt-2">Uttarakhand</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                        <img src="/static/img/Kedarnath.jpg" class="image-fluid" width="100%" height="80%">
+                        <div class="container overlap-heading">
+                            <h5 class="card-title pt-2">Uttarakhand</h5>
+                            <a href="{% url 'uttarakhand' %}" class="btn mb-2 px-4 p-1 btn-primary">Explore »</a>
+                        </div>
                     </div>
 
-                </div>
-            </div>
 
+                    <div class="card mx-2 my-3 p-0 text-center" style="width: 27.5rem;">
+                        <img src="/static/img/mountain.jpg" class="image-fluid" width="100%" height="80%">     <!--The img-fluid class ensures that the images scale properly and remain responsive.-->
+                        <div class="container overlap-heading">
+                            <h5 class="card-title pt-2">Manali</h5>
+                            <a href="" class="btn mb-2 px-4 p-1 btn-primary">Explore »</a>
+                        </div>
 
-            <div class="card mx-2 my-3" style="width: 36.5rem;">
-                <div class="card-body p-0 pb-3">
-                    <img src="/static/img/mountain.jpg" width="100%" height="80%">
-                    <div class="container overlap-heading">
-                        <h5 class="card-title pt-2">Manali</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
                     </div>
-
-                </div>
             </div>
         </div>
 
 
         <div class="container d-flex">
-            <div class="card mx-2 my-3" style="width: 24rem;">
-                <div class="card-body p-0 pb-1">
-                    <img src="/static/img/monument.jpg" width="100%">
+            <div class="row">
+                <div class="card mx-2 my-3 p-0 text-center" style="width: 24rem;">
+
+                    <img src="/static/img/monument.jpg" width="100%" height="80%">
                     <div class="container overlap-heading">
                         <h5 class="card-title pt-2">Agra</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                        <a href="" class="btn mb-2 px-4 p-1 btn-primary">Explore »</a>
                     </div>
 
                 </div>
-            </div>
 
-            <div class="card mx-2 my-3" style="width: 24rem;">
-                <div class="card-body p-0 pb-1">
-                    <img src="/static/img/monument.jpg" width="100%">
+
+
+                <div class="card mx-2 my-3 p-0 text-center" style="width: 24rem;">
+                    <img src="/static/img/New_Delhi.jpg" width="100%" height="80%">
                     <div class="container overlap-heading">
                         <h5 class="card-title pt-2">New Delhi</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                        <a href="{% url 'newdelhi' %}" class="btn mb-2 px-4 p-1 btn-primary">Explore »</a>
                     </div>
 
                 </div>
-            </div>
 
-            <div class="card mx-2 my-3" style="width: 24rem;">
-                <div class="card-body p-0 pb-1">
-                    <img src="/static/img/monument.jpg" width="100%">
+                <div class="card mx-2 my-3 p-0 text-center" style="width: 24rem;">
+                    <img src="/static/img/KODAIKANAL.jpg" width="100%" height="80%">
                     <div class="container overlap-heading">
-                        <h5 class="card-title pt-2">Chennai</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                        <h5 class="card-title pt-2">Tamil Nadu</h5>
+                        <a href="{% url 'tamilnadu' %}" class="btn mb-2 px-4 p-1 btn-primary">Explore »</a>
                     </div>
 
                 </div>
             </div>
         </div>
+
 
 
 
@@ -269,53 +267,53 @@
                                 <span style="font-size:13px;">22 Places</span>
                             </li>
                         </ul>
-                    </div> 
+                    </div>
                 </div>
             </div>
 
-                    <div class="container col-4">
-                        <div class="row">
-                            <div class="mb-1">
-                                <ul class="nav flex-column">
-                                    <li class="nav-item mb-2">
-                                        <a href="{% url 'kerala' %}" class="nav-link p-0 text-secondary">
-                                            <h5>Kerala</h5>
-                                        </a>
-                                        <span style="font-size:13px;">22 Places</span>
-                                    </li>
+            <div class="container col-4">
+                <div class="row">
+                    <div class="mb-1">
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2">
+                                <a href="{% url 'kerala' %}" class="nav-link p-0 text-secondary">
+                                    <h5>Kerala</h5>
+                                </a>
+                                <span style="font-size:13px;">22 Places</span>
+                            </li>
 
-                                    <li class="nav-item mb-2">
-                                        <a href="{% url 'goa' %}" class="nav-link p-0 text-secondary">
-                                            <h5>Goa</h5>
-                                        </a>
-                                        <span style="font-size:13px;">22 Places</span>
-                                    </li>
+                            <li class="nav-item mb-2">
+                                <a href="{% url 'goa' %}" class="nav-link p-0 text-secondary">
+                                    <h5>Goa</h5>
+                                </a>
+                                <span style="font-size:13px;">22 Places</span>
+                            </li>
 
-                                    <li class="nav-item mb-2">
-                                        <a href="{% url 'tamilnadu' %}" class="nav-link p-0 text-secondary">
-                                            <h5>Tamil Nadu</h5>
-                                        </a>
-                                        <span style="font-size:13px;">22 Places</span>
-                                    </li>
+                            <li class="nav-item mb-2">
+                                <a href="{% url 'tamilnadu' %}" class="nav-link p-0 text-secondary">
+                                    <h5>Tamil Nadu</h5>
+                                </a>
+                                <span style="font-size:13px;">22 Places</span>
+                            </li>
 
-                                    <li class="nav-item mb-2">
-                                        <a href="{% url 'uttarakhand' %}" class="nav-link p-0 text-secondary">
-                                            <h5>Uttarakhand</h5>
-                                        </a>
-                                        <span style="font-size:13px;">22 Places</span>
-                                    </li>
+                            <li class="nav-item mb-2">
+                                <a href="{% url 'uttarakhand' %}" class="nav-link p-0 text-secondary">
+                                    <h5>Uttarakhand</h5>
+                                </a>
+                                <span style="font-size:13px;">22 Places</span>
+                            </li>
 
-                                    <li class="nav-item mb-2">
-                                        <a href="{% url 'andhrapradesh' %}" class="nav-link p-0 text-secondary">
-                                            <h5>Andhra Pradesh</h5>
-                                        </a>
-                                        <span style="font-size:13px;">22 Places</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                            <li class="nav-item mb-2">
+                                <a href="{% url 'andhrapradesh' %}" class="nav-link p-0 text-secondary">
+                                    <h5>Andhra Pradesh</h5>
+                                </a>
+                                <span style="font-size:13px;">22 Places</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+        </div>
 
 
 </section>
