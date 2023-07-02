@@ -47,6 +47,12 @@ def Explore(request):
 def FAQs(request):
     return render(request, "FAQ.html")
 
+def TermsAndCondition(request):
+    return render(request, "TermsAndCondition.html")
+
+def PRIVACYpolicy(request):
+    return render(request, "PrivacyPolicy.html")
+
 
 # Explore page sidebar link
 def BookGuide(request):

@@ -29,6 +29,8 @@ urlpatterns = [
     path('explore/',views.Explore,name="explore"),
     path('contactus/',views.ContactUs,name="contactus"),
     path('faqs/',views.FAQs,name="faqs"),
+    path('termscondition/',views.TermsAndCondition,name="termscondition"),
+    path('privacypolicy/',views.PRIVACYpolicy,name="privacypolicy"),
 
     path('book-a-guide/',views.BookGuide,name="book-a-guide"),
     path('payment/',views.Payment,name="payment"),
