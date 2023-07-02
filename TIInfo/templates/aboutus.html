@@ -1,66 +1,121 @@
 {% extends 'base.html' %}
 
-{% block section %}
+  {% block section %}
 
-<section>
-    <div class="d-flex flex-nowrap container">
-        <h1 class="visually-hidden">Sidebars examples</h1>
+
+
+
+  {% comment %} side bar section {% endcomment %}
+
+<section class="container d-flex" id="about-body-bg">
+  <div class="d-flex flex-column flex-shrink-0 p-0 text-dark bg-body-secondary" style="width: 235px; height: 500px;">
+    <a href="{% url 'aboutus' %}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi pe-none " width="20" height="100"></svg>
       
-        <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
-          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <svg class="bi pe-none me-2" width="40" height="32"></svg>
-            <span class="fs-4">Sidebar</span>
-          </a>
-          <hr>
-          <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-              <a href="#" class="nav-link active" aria-current="page">
-                <svg class="bi pe-none me-2" width="16" height="16"></svg>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi pe-none me-2" width="16" height="16"></svg>
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi pe-none me-2" width="16" height="16"></svg>
-                Orders
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi pe-none me-2" width="16" height="16"></svg>
-                Products
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi pe-none me-2" width="16" height="16"></svg>
-                Customers
-              </a>
-            </li>
-          </ul>
-          <hr>
-          <div class="dropdown">
-            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-              <strong>mdo</strong>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-              <li><a class="dropdown-item" href="#">New project...</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Sign out</a></li>
-            </ul>
-          </div>
-        </div>
-    </div>
+      <span class="fs-6 fw-semibold" style="border:1px solid darkgray;padding:4px 15px; background-color:gray;border-radius:3px;">About Travel India Info</span>
+    </a>
+    <p class="about-questions">- What is Travel India Info </p>
+    <p class="about-questions">- Why to use Travel India Info ?</p>
+    <p class="about-questions">- Where we operate</p>
 
+    
+    <ul class="nav nav-pills flex-column mb-auto">
+      
+      <li>
+        <a href="" class="nav-link text-dark fs-6 fw-semibold">
+          <svg class="bi pe-none" width="16" height="20"></svg>
+          Customer Reviews
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'faqs' %}" class="nav-link text-dark fs-6 fw-semibold">
+          <svg class="bi pe-none fs-6" width="16" height="20"></svg>
+          FAQs
+        </a>
+      </li>
+      <li>
+        <a href="" class="nav-link text-dark fs-6 fw-semibold">
+          <svg class="bi pe-none fs-6" width="16" height="20"></svg>
+          Privacy Policy
+        </a>
+      </li>
+      <li>
+        <a href="" class="nav-link text-dark fs-6 fw-semibold">
+          <svg class="bi pe-none fs-6" width="16" height="02"></svg>
+          Terms & Conditions
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'contactus' %}" class="nav-link text-dark fs-6 fw-semibold">
+          <svg class="bi pe-none" width="16" height="20"></svg>
+          Contact Us
+        </a>
+      </li>
+    </ul>
+  </div>
+    {% comment %} <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="/static/img/login-icon.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>more</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><a class="dropdown-item" href="#">New project...</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div>
+   {% endcomment %}
+
+
+{% comment %}  about page description section {% endcomment %}
+
+    
+      <div class="container mx-2 my-3">
+        <p style="color:gray; font-size:16.5px;padding-top:1rem;">HOME > ABOUT US</p>
+        <p class="fs-5 fw-semibold"><img src="/static/img/india.png" class="image-fluid mx-2" width="6%"> What is Travel India Info</p>
+        <br>
+        <p id="about-description">Farm Picked is Meerut's city online farm fresh product store.With over 1,000 products in our catalogue. You will find every farm 
+          item you will looking for, which includes Fresh Fruits and Fresh Vegetables.
+          Choose from a wide range of options in both the Category, exclusively handpicked to help you find the best quality available at the lowest prices.
+          
+          Select a time slot for delivery and your order will be delivered right to your doorstep, anywhere in Meerut. You can pay online using Debit/Credit Card or by cash on delivery.<br>
+          We guarantee on time delivery, and the best quality !<br>
+          <h3> Happy Shopping</h3>
+          <br><br>
+        
+
+        <p class="fs-5 fw-semibold"><img src="/static/img/using-phone.png" class="image-fluid mx-2" width="6%"> Why to use Travel India Info ?</p>
+        <br>
+        <p id="about-description"> Farm Picked allows you to walk away the drudgery of grocery shopping and welcome an easy relaxed way of browsing and shopping for farm products.
+          Dicover some fruits and vegetables and shop for all your products needs from the comfort of your home. No More getting stuck in traffic jams,
+          paying for parking, petrol/deisel standing in long queues and carrying heavy bags - get everything you need, right at your doorstep. Fresh products
+          shopping online is now easy as every product on your monthly shopping list, is now available online at Farm Picked, Meerut's best online farm fresh store.
+        </p>
+        <br><br>
+
+        <p class="fs-5 fw-semibold"><img src="/static/img/headquarter.png" class="image-fluid mx-2" width="6%"> Where we operate</p>
+        <br>
+        <p id="about-description">We currently Operate from Uttar Pradesh and provide our services in all over India. You can buy our best offers on the websites and we provide the services as per your request on your place.
+
+        </p>
+        <br><br><br><br>
+      
+        
+        
+      </div>
+      
+    
 </section>
 
-{% endblock  %}
+
+
+
+
+{% endblock %}
+
+
+</body>
+</html>

@@ -1,5 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+
+
+
 from JammuAndKashmir.models import JammuAndKashmir
 from HimachalPradesh.models import Himachal
 from Punjab.models import Punjab
@@ -40,6 +43,9 @@ def ContactUs(request):
 
 def Explore(request):
     return render(request, "explore.html")
+
+def FAQs(request):
+    return render(request, "FAQ.html")
 
 
 # Explore page sidebar link

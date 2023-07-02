@@ -16,3 +16,10 @@
     border: 2px solid gray;
     padding: 1rem 1.5rem;
 }
+
+.about-questions{
+    font-size: 13px;
+    margin-left: 30px;
+    line-height: 0.5;
+    
+}

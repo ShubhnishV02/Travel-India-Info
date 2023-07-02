@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+  {% block section %}
+
+
+
+
+  {% comment %} side bar section {% endcomment %}
+
+<section class="container d-flex">
+
+
+  <div class="d-flex flex-column flex-shrink-0 p-0 bg-body-secondary" style="width: 235px; height: 500px;">
+
+    <a href="{% url 'aboutus' %}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <svg class="bi pe-none " width="30" height="100"></svg>
+      <span class="fs-6 fw-semibold" style="padding:4px 5px;">About Travel India Info</span>
+    </a>
+    
+    <p class="about-questions">- What is Travel India Info </p>
+    <p class="about-questions">- Why to use Travel India Info ?</p>
+    <p class="about-questions">- Where we operate</p>
+
+    
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li>
+        <a href="" class="nav-link text-dark">
+          <svg class="bi pe-none" width="16" height="20"></svg>
+          <span class="fs-6 fw-semibold">Customer Reviews</span>
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'faqs' %}" class="nav-link text-white d-flex" style="border:1px solid darkgray;padding:4px 5px;background-color:gray;border-radius:3px;">
+          <svg class="bi pe-none fs-6" width="30" height="20"></svg>
+          <span class="fs-6 fw-semibold" >
+            FAQs</span>
+        </a>
+      </li>
+      <li>
+        <a href="" class="nav-link text-dark fs-6 fw-semibold">
+          <svg class="bi pe-none fs-6" width="16" height="16"></svg>
+          Privacy Policy
+        </a>
+      </li>
+      <li>
+        <a href="" class="nav-link text-dark fs-6 fw-semibold">
+          <svg class="bi pe-none fs-6" width="16" height="16"></svg>
+          Terms & Conditions
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'contactus' %}" class="nav-link text-dark fs-6 fw-semibold">
+          <svg class="bi pe-none" width="16" height="16"></svg>
+          Contact Us
+        </a>
+      </li>
+    </ul>
+  </div>
+    {% comment %} <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="/static/img/login-icon.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>more</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><a class="dropdown-item" href="#">New project...</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div>
+   {% endcomment %}
+
+
+{% comment %}  about page description section {% endcomment %}
+
+    
+        <div class="container mx-2 my-3">
+            <p style="color:gray; font-size:16.5px; margin-left:0.2rem;padding-top:1rem;">HOME > FAQs</p>
+            <h1><img src="/static/img/faq.png" class="image-fluid m-2" width="6%" > FAQs </h1>
+                <br>
+            <h4>When will I receive my order?</h4>
+            <br>
+            <p id="about-description">Once you are done selecting your products and click on checkout you will be prompted to select delivery slot. 
+                Your order will be delivered to you on the day and slot selected by you. If we are unable to deliver the order during the specified 
+                time duration (this sometimes happens due to unforeseen situations).<br>
+              <hr>
+            
+              <h4>How are the fruits and vegetables packaged?</h4>
+              <br>
+              <p id="about-description">Fresh fruits and vegetables are hand picked, hand cleaned and hand packed in reusable plastic trays covered with cling. 
+                We ensure hygienic and careful handling of all our products.<br>
+                
+                <hr>
+        
+                <h4>How are the fruits and vegetables weighed?</h4>
+              <br>
+              <p id="about-description">Every fruit and vegetable varies a little in size and weight. While you shop we show an estimated weight and 
+                price for everything priced by kilogram. At the time of delivery we weigh each item to determine final price. This could vary by a 
+                maximum of one unit weight depending on the article. In case the weight of the product is lesser than what you ordered, you will pay 
+                correspondingly less.<br>
+                
+                <hr>
+        
+                <h4>How will the delivery be done?</h4>
+              <br>
+              <p id="about-description">We have a dedicated team of delivery personnel and a fleet of vehicles operating across the city which ensures 
+                timely and accurate delivery to our customers.<br>
+                
+                <hr>
+        
+                <h4>How much are the delivery charges for an order on Farm Picked now</h4>
+              <br>
+              <p id="about-description">Delivery charges will be applied for Farm Picked now orders based on various factors such as order value, time of day, weather etc.<br>
+                
+                <hr>
+        
+                <h4>What is the minimum order value required for delivery?</h4>
+              <br>
+              <p id="about-description">There is no minimum order value needed for delivery.
+                <hr>
+        
+                <h4>What are your timings to contact customer service?</h4>
+              <br>
+              <p id="about-description">Our customer service team is available throughout the week, all seven days from 6 am to 10 pm.
+                <hr>
+        
+                <h4>How can I give feedback on the quality of customer service?</h4>
+              <br>
+              <p id="about-description">Our customer support team constantly strives to ensure the best shopping experience for all 
+                our customers. We would love to hear about your experience with bigbasket. Do write to us at shubhnishv01@gmail.com.
+                in case of positive or negative feedback.
+                
+            <br>
+          
+      </div>
+
+
+
+
+</section>
+
+{% endblock %}
+
+
+</body>
+</html>

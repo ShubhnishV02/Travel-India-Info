@@ -28,6 +28,7 @@ urlpatterns = [
     path('aboutus/',views.AboutUs,name="aboutus"),
     path('explore/',views.Explore,name="explore"),
     path('contactus/',views.ContactUs,name="contactus"),
+    path('faqs/',views.FAQs,name="faqs"),
 
     path('book-a-guide/',views.BookGuide,name="book-a-guide"),
     path('payment/',views.Payment,name="payment"),
@@ -61,7 +62,7 @@ urlpatterns = [
     path('goa/',views.GOA,name="goa"),
     path('maharashtra/',views.MAHARASHTRA,name="maharashtra"),
 
-
+# Center Page Link
     path('newdelhi/',views.NEWDelhi,name="newdelhi"),
 
 
