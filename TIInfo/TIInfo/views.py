@@ -53,6 +53,23 @@ def TermsAndCondition(request):
 def PRIVACYpolicy(request):
     return render(request, "PrivacyPolicy.html")
 
+def CUSTOMERReviews(request):
+    return render(request, "CustomerReviews.html")
+
+
+# index services
+def Mountains(request):
+    JandKadata = JammuAndKashmir.objects.all()
+
+    data = {"JandKadata" : JandKadata}
+    return render(request, "JammuKashmir.html", data)
+
+def Mountains(request):
+    return render(request, "Mountains.html")
+
+def Mountains(request):
+    return render(request, "Mountains.html")
+
 
 # Explore page sidebar link
 def BookGuide(request):

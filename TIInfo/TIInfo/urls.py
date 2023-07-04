@@ -31,10 +31,14 @@ urlpatterns = [
     path('faqs/',views.FAQs,name="faqs"),
     path('termscondition/',views.TermsAndCondition,name="termscondition"),
     path('privacypolicy/',views.PRIVACYpolicy,name="privacypolicy"),
+    path('customerreview/',views.CUSTOMERReviews,name="customerreview"),
 
     path('book-a-guide/',views.BookGuide,name="book-a-guide"),
     path('payment/',views.Payment,name="payment"),
     path('feedback/',views.Feedback,name="feedback"),
+
+
+    path('mountains/',views.Mountains,name="mountains"),
 
 # North Page Link
     path('jammukashmir/',views.JammuKashmir,name="jammukashmir"),

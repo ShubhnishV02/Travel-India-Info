@@ -1,3 +1,5 @@
+/* ----------------------------------------- Homepage ----------------------------------------- */
+
 .logo_img {
     
     height:4rem;
@@ -7,6 +9,9 @@
     border-radius: 50%;
 }
 
+
+
+/* ------------------------------  - - - - - -------------------------------------------------- */
 .overlap-heading{
     margin-bottom: 0rem;
     
@@ -17,6 +22,8 @@
     padding: 1rem 1.5rem;
 }
 
+/* ----------------------------------------- About Page  -------------------------------------------- */
+
 .about-questions{
     
     font-size: 12px;
@@ -24,3 +31,69 @@
     line-height: 0.5;
     
 }
+
+/* ------------------------------------ Customer Review Page  -------------------------------------- */
+
+.customer-review-box {
+    width: 300px;
+    border: 1px solid wheat;
+    padding:4px;
+    text-align: center;
+}
+
+.customer-review-box img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.checked {
+    color: orange;
+  }
+
+
+/* -----------------------------------------Mountain, Monuments and Beaches----------------------------------- */
+
+/* used to decorate card box */
+.index-mount-monument-beaches{
+    border: 10px soild grey;
+}
+
+/* used to blurred the image */
+.blurred-image {
+    filter: blur(3px); /* Adjust the value as needed for desired blur effect */
+}
+ 
+
+/* used this to show the breadcrumb on the blurred image on mountains, monuments and beaches */
+.breadcrumb-container {
+    position: absolute;
+    top: 25%;
+    left: 57%;
+    transform: translate(-50%, -60%);
+    z-index: 0; /* Ensure the breadcrumb appears on top of the image */
+}
+
+.breadcrumb-container-heading {
+    position: absolute;
+    top: 65%;
+    left: 57%;
+    transform: translate(-50%, -20%);
+    z-index: 0;
+}
+
+/* mountains, mounments and beaches extra line overflow */
+.card-text {
+    font-size: 13px;
+    max-height: 200px; /* Set a maximum height for the text box */
+    overflow-x: hidden;
+    overflow-y: scroll hidden; /* Hide any overflowing text */
+    text-overflow: ellipsis; /* Add an ellipsis (...) at the end of the text if it overflows */
+    display:-webkit-box; /* Use the old webkit box layout */
+    -webkit-line-clamp: 7; /* Limit the number of lines to display */
+    -webkit-box-orient: vertical; /* Set the vertical orientation of the box layout */
+}
+
+
