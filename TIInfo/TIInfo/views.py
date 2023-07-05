@@ -59,16 +59,15 @@ def CUSTOMERReviews(request):
 
 # index services
 def Mountains(request):
-    JandKadata = JammuAndKashmir.objects.all()
-
-    data = {"JandKadata" : JandKadata}
-    return render(request, "JammuKashmir.html", data)
-
-def Mountains(request):
     return render(request, "Mountains.html")
 
-def Mountains(request):
-    return render(request, "Mountains.html")
+def Monuments(request):
+    return render(request, "Monuments.html")
+
+def Beaches(request):
+    return render(request, "Beaches.html")
+
+
 
 
 # Explore page sidebar link

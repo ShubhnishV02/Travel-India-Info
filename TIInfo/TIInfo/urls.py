@@ -39,6 +39,8 @@ urlpatterns = [
 
 
     path('mountains/',views.Mountains,name="mountains"),
+    path('monuments/',views.Monuments,name="monuments"),
+    path('beaches/',views.Beaches,name="beaches"),
 
 # North Page Link
     path('jammukashmir/',views.JammuKashmir,name="jammukashmir"),
