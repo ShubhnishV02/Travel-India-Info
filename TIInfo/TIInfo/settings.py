@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'Goa',
     'Maharashtra',
     'New_Delhi',
+    'GuideBooking',
     
     'django.contrib.admin',
     'django.contrib.auth',

@@ -18,20 +18,32 @@
                     </button>
                     <div class="collapse" id="home-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="{% url 'aboutus' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">- About</a></li>
-                            <li><a href="{% url 'explore' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">- Explore</a></li>
-                            <li><a href="{% url 'contactus' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">- Contact Us</a></li>
+                            <li><a href="{% url 'aboutus' %}"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">-
+                                    About</a></li>
+                            <li><a href="{% url 'explore' %}"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">-
+                                    Explore</a></li>
+                            <li><a href="{% url 'contactus' %}"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">-
+                                    Contact Us</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed px-3 fs-5 fw-semibold" data-bs-toggle="collapse" data-bs-target="#services-collapse" aria-expanded="false"> 
+                    <button
+                        class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed px-3 fs-5 fw-semibold"
+                        data-bs-toggle="collapse" data-bs-target="#services-collapse" aria-expanded="false">
                         Services
                     </button>
                     <div class="collapse" id="services-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="{% url 'book-a-guide' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">- Book A Guide</a></li>
-                            <li><a href="{% url 'feedback' %}" class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">- Feedback</a></li>
+                            <li><a href="{% url 'book-a-guide' %}"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">-
+                                    Book A Guide</a></li>
+                            <li><a href="{% url 'feedback' %}"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">-
+                                    Feedback</a></li>
                         </ul>
                     </div>
                 </li>
@@ -68,37 +80,39 @@
                             {{i.Desc | safe}}
 
                         </p>
-                        <div class=" d-flex">
-                            <p class="card-text"><small class="text-body-secondary">Last updated on
-                                    {{i.Pub_date}}</small></p>
-                            <!-- Example split danger button -->
-                            <div class="btn-group mx-4">
-                                <button type="button" class="btn btn-info">Details</button>
-                                <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="visually-hidden">Toggle Dropdown</span>
-                                </button>
-                                <div class="dropdown-menu p-3 text-body-secondary" style="max-width: 500px;">
-                                    <p class="fs-5 fw-semibold text-success">
-                                        Weather:
-                                    </p>
-                                    <div>
-                                        <h6>Best Time:</h6>
-                                        <p style="font-size:13px;">{{i.Best_Time}}</p>
-                                        <h6>Avoid Time:</h6>
-                                        <p style="font-size:13px;">{{i.Avoid_Time}}</p>
+                        <p class="mx-2" style="font-size:13px;"><small class="text-body-secondary">Last updated on
+                                {{i.Pub_date}}</small></p>
+                        <!-- Example split danger button -->
 
-                                    </div>
-                                    <div>
-                                        <h6>Ideal Duration:</h6>
-                                        <p style="font-size:13px;">{{i.Ideal_Duration}}</p>
+                        <div class="row">
+                            <div class="d-flex">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-info fw-semibold"
+                                        style="margin-left:5px;">Details</button>
+                                    <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu p-3 text-body-secondary" style="max-width: 500px;">
+                                        <p class="fs-5 fw-semibold text-success">
+                                            Weather:
+                                        </p>
+                                        <div>
+                                            <h6>Best Time:</h6>
+                                            <p style="font-size:13px;">{{i.Best_Time}}</p>
+                                            <h6>Avoid Time:</h6>
+                                            <p style="font-size:13px;">{{i.Avoid_Time}}</p>
+                                            <h6>Ideal Duration:</h6>
+                                            <p style="font-size:13px;">{{i.Ideal_Duration}}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <a href="" type="button" class="btn btn-warning">{{i.Visits_more_places}}</a>
+                                <button type="button" class="btn btn-warning text-decoration-none text-dark fw-semibold mx-2"> {{i.Visits_more_places | safe}} </button>
+                            </div>
                         </div>
                     </div>
+
                 </div>
 
                 {% endfor %}
@@ -106,6 +120,7 @@
 
             </div>
         </div>
+    </div>
 
 
 </section>

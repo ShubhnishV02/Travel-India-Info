@@ -34,6 +34,7 @@ urlpatterns = [
     path('customerreview/',views.CUSTOMERReviews,name="customerreview"),
 
     path('book-a-guide/',views.BookGuide,name="book-a-guide"),
+    path('savebookdetails/',views.saveBookingDetails,name="savebookdetails"),
     path('payment/',views.Payment,name="payment"),
     path('feedback/',views.Feedback,name="feedback"),
 
@@ -74,7 +75,15 @@ urlpatterns = [
     path('newdelhi/',views.NEWDelhi,name="newdelhi"),
 
 
+# extra pages
+    path('manali/',views.MANALI,name="manali"),
+    path('kasol/',views.KASOL,name="kasol"),
+    path('shimla/',views.SHIMLA,name="shimla"),
+    path('dalhousie/',views.DALHOUSIE,name="dalhousie"),
+
+    path('gulmarg/',views.GULMARG,name="gulmarg"),
 
     path("jammu-kashmir/", include("JammuAndKashmir.urls")),
+    
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

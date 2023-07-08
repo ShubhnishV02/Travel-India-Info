@@ -2,6 +2,18 @@
 
 {% block section %}
 <section>
+
+    {% if messages %}
+    <div class="messages">
+         {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+        {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %} 
+
+    
     <div class="container mt-3 Guide-page px-4" style="box-shadow:2px 2px 10px gray;">
 
         <h4 class="mb-3 m-2">Payment</h4>

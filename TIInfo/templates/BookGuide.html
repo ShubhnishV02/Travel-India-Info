@@ -2,7 +2,118 @@
 
 {% block section %}
 <section>
-    <div class="container mt-3 Guide-page px-4" style="box-shadow:2px 2px 10px gray;">
+
+    <div class="container py-3">
+        <header>
+      
+          <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal text-body-emphasis">Check Guide Pricing</h1>
+            <p class="fs-5 text-body-secondary">You can now check the pricing details to book your guide and plan your memorable journey.<br>
+            Feel free to explore the pricing options and select the one that best suits your preferences and budget. </p>
+          </div>
+        </header>
+      
+        <main>
+          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Normal</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$12<small class="text-body-secondary fw-light">/Guide</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Knowledge of Places and Histories</li>
+                    <li>Serve you better Knowledge</li>
+                    <li>Customer support</li>  
+                    <li></li>   
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Pro</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$20<small class="text-body-secondary fw-light">/Guide</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Knowledge of Places and Histories</li>
+                    <li>Serve you better Knowledge</li>
+                    <li>Customer support</li> 
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                <div class="card-header py-3 text-bg-primary border-primary">
+                  <h4 class="my-0 fw-normal">Extreme</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$30<small class="text-body-secondary fw-light">/Guide</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Knowledge of Places and Histories</li>
+                    <li>Serve you better Knowledge</li>
+                    <li>Priority Customer support</li> 
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <h2 class="display-6 text-center mb-4">Compare plans</h2>
+      
+          <div class="table-responsive">
+            <table class="table text-center">
+              <thead>
+                <tr>
+                  <th style="width: 34%;"></th>
+                  <th style="width: 22%;">Free</th>
+                  <th style="width: 22%;">Pro</th>
+                  <th style="width: 22%;">Extreme</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="text-start">3 Places(Hindi + Regional Language)</th>
+                  <td class="fw-bold">√</td>
+                  <td class="fw-bold">√</td>
+                  <td class="fw-bold">√</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-start">7 Places (English + Hindi + Regional Language)</th>
+                  <td></td>
+                  <td class="fw-bold">√</td>
+                  <td class="fw-bold">√</td>
+                </tr>
+              </tbody>
+      
+              <tbody>
+                <tr>
+                  <th scope="row" class="text-start">9 Places (English + Hindi + Regional Language)</th>
+                  <td></td>
+                  <td></td>
+                  <td class="fw-bold">√</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-start">12 Places (English + Hindi + Regional Language)</th>
+                  <td></td>
+                  <td></td>
+                  <td class="fw-bold">√</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      
+    </div>
+
+    <br><hr class="container"><br>
+
+
+    <div class="container mt-4 Guide-page px-4" style="box-shadow:2px 2px 10px gray;">
         <h3>Register Yourself For A Guide!</h3>
         <hr>
         <p>Please enter your correct details here!</p>
@@ -10,10 +121,8 @@
             <p>All fields with an asterisk(</p><p style="color:red;">*</p><p>) are mandatory</p>
         </div>
 
-        {% comment %} action="{% url 'saveCSRequest' %}" {% endcomment %}
 
-
-        <form method="POST" role="form">     
+        <form method="POST" action="{% url 'savebookdetails' %}" role="form">     
             {% if error %}
             <div class="alert alert-danger" role="alert">
                 Please Enter The value
@@ -36,16 +145,16 @@
 
             <div class="container form-control mb-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div class="form-check form-check-inline col-2 mx-5">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                <label class="form-check-label" for="inlineRadio1">Male</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="male">
+                <label class="form-check-label" for="male">Male</label>
               </div>
               <div class="form-check form-check-inline col-2">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                <label class="form-check-label" for="inlineRadio2">Female</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="female">
+                <label class="form-check-label" for="female">Female</label>
               </div>
               <div class="form-check form-check-inline col-2">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                <label class="form-check-label" for="inlineRadio3">Others</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="others" value="others">
+                <label class="form-check-label" for="others">Others</label>
               </div>
             </div>
       
@@ -61,7 +170,7 @@
 
                 <div class="form-control d-flex mb-2"> 
                     <label for="inputAddress" style="display:flex;white-space:pre;">Address<p style="color:red;padding-right:31px;">*</p></label>
-                    <input class="col-8" type="text" id="inputAddress" name="address" placeholder="1234 Main St">
+                    <input class="col-8" type="text" id="inputAddress" name="addressline1" placeholder="1234 Main St">
                 </div>
 
                 <div class="form-control d-flex mb-2"> 
@@ -79,7 +188,7 @@
                 <div class="d-flex mx-2">
                   <div class="form-control d-flex mb-2">
                     <label for="inputCity" style="display:flex;">City<p style="color:red;padding-right:8px;">* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></label>
-                    <input class="col-6" type="text" id="inputCity" name="city" placeholder="Enter Your City">
+                    <input class="col-6" type="text" id="inputCity" name="City" placeholder="Enter Your City">
                   </div>
 
                   <div class="form-control d-flex mb-2 mx-1">
@@ -87,6 +196,7 @@
                     <input class="col-6" type="text" id="inputState" name="State" placeholder="Enter Your State">
                   </div>
                 </div>
+
                 
                 <br><br><br>
                 <h3>Enter Your Choice Guide!</h3>
@@ -105,16 +215,18 @@
 
                 <div class="form-control d-flex mb-2">
                     <label for="inputGuideDate" style="display:flex;">Availability Date<p style="color:red;padding-right:8px;">*</p></label>
-                    <input type="date">
+                    <input type="date" name="date">
                 </div>
 
                   <hr class="my-4">
-                  <a href="{% url 'payment' %}" class="w-100 btn btn-primary btn-lg" type="submit">Payment Page →</a>
+                  <button class="w-100 btn btn-primary btn-lg" type="submit">Payment Page →</button>
 
             </div>
         </form>
 
     </div>
+
+    
 
 </section>
 
