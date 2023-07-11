@@ -82,6 +82,28 @@ urlpatterns = [
     path('dalhousie/',views.DALHOUSIE,name="dalhousie"),
 
     path('gulmarg/',views.GULMARG,name="gulmarg"),
+    path('srinagar/',views.SRINAGAR,name="srinagar"),
+    path('pahalgam/',views.PAHALGAM,name="pahalgam"),
+    path('anantnag/',views.ANANTNAG,name="anantnag"),
+
+    path('amritsar/',views.AMRITSAR,name="amritsar"),
+    path('pathankot/',views.PATHANKOT,name="pathankot"),
+
+    path('agra/',views.AGRA,name="agra"),
+    path('varanasi/',views.VARANASI,name="varanasi"),
+    path('vrindavan/',views.VRINDAVAN,name="vrindavan"),
+    path('lucknow/',views.LUCKNOW,name="lucknow"),
+    path('mathura/',views.MATHURA,name="mathura"),
+    path('allahabad/',views.ALLAHABAD,name="allahabad"),
+    path('ayodhya/',views.AYODHYA,name="ayodhya"),
+    path('meerut/',views.MEERUT,name="meerut"),
+
+    path('rishikesh/',views.RISHIKESH,name="rishikesh"),
+    path('auli/',views.AULI,name="auli"),
+    path('nainital/',views.NAINITAL,name="nainital"),
+    path('dehradun/',views.DEHRADUN,name="dehradun"),
+    path('mussoorie/',views.MUSSOORIE,name="mussoorie"),
+    path('haridwar/',views.HARIDWAR,name="haridwar"),
 
     path("jammu-kashmir/", include("JammuAndKashmir.urls")),
     

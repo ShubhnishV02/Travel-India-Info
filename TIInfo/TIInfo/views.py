@@ -4,11 +4,11 @@ from GuideBooking.models import Guide_Booking
 from django.contrib import messages
 
 
-from JammuAndKashmir.models import JammuAndKashmir, Gulmarg
+from JammuAndKashmir.models import JammuAndKashmir, Gulmarg , Srinagar, Pahalgam, Anantnag
 from HimachalPradesh.models import Himachal, Manali, Kasol, Shimla, Dalhousie
-from Punjab.models import Punjab
-from Uttar_Pradesh.models import UttarPradesh
-from Uttarakhand.models import Uttarakhand
+from Punjab.models import Punjab, Amritsar, Pathankot
+from Uttar_Pradesh.models import UttarPradesh , Agra, Varanasi, Vrindavan, Lucknow, Mathura, Allahabad, Ayodhya, Meerut
+from Uttarakhand.models import Uttarakhand, Rishikesh, Auli, Nainital, Dehradun,  Mussoorie, Haridwar
 
 from Assam.models import Assam
 from Sikkim.models import Sikkim
@@ -204,6 +204,30 @@ def GULMARG(request):
         "gulmargdata" : gulmargdata}
     return render(request, "GULMARG.html", data)
 
+def SRINAGAR(request):
+    srinagardata = Srinagar.objects.all()
+
+    data = {'title' : 'Travel India Info | Srinagar',
+        "srinagardata" : srinagardata}
+    return render(request, "SRINAGAR.html", data)
+
+def PAHALGAM(request):
+    pahalgamdata = Pahalgam.objects.all()
+
+    data = {'title' : 'Travel India Info | Pahalgam',
+        "pahalgamdata" : pahalgamdata}
+    return render(request, "PAHALGAM.html", data)
+
+def ANANTNAG(request):
+    anantnagdata = Anantnag.objects.all()
+
+    data = {'title' : 'Travel India Info | Anantnag',
+        "anantnagdata" : anantnagdata}
+    return render(request, "ANANTNAG.html", data)
+
+
+
+
 
 def Himachalpradesh(request):
     himachaldata = Himachal.objects.all()
@@ -240,12 +264,75 @@ def DALHOUSIE(request):
         "dalhousiedata" : dalhousiedata}
     return render(request, "DALHOUSIE.html", data)
 
+
+
+
+
 def UTTARPRADESH(request):
     uttarpradeshdata = UttarPradesh.objects.all()
 
     data = {'title' : 'Travel India Info | Uttar Pradesh',
         "uttarpradeshdata" : uttarpradeshdata}
     return render(request, "UttarPradesh.html" , data)
+
+def AGRA(request):
+    agradata = Agra.objects.all()
+
+    data = {'title' : 'Travel India Info | AGRA',
+        "agradata" : agradata}
+    return render(request, "AGRA.html" , data)
+
+def VARANASI(request):
+    varanasidata = Varanasi.objects.all()
+
+    data = {'title' : 'Travel India Info | Varanasi',
+        "varanasidata" : varanasidata}
+    return render(request, "VARANASI.html" , data)
+
+def VRINDAVAN(request):
+    vrindavandata = Vrindavan.objects.all()
+
+    data = {'title' : 'Travel India Info | Vrindavan',
+        "vrindavandata" : vrindavandata}
+    return render(request, "VRINDAVAN.html" , data)
+
+def LUCKNOW(request):
+    lucknowdata = Lucknow.objects.all()
+
+    data = {'title' : 'Travel India Info | Lucknow',
+        "lucknowdata" : lucknowdata}
+    return render(request, "LUCKNOW.html" , data)
+
+def ALLAHABAD(request):
+    allahabaddata = Allahabad.objects.all()
+
+    data = {'title' : 'Travel India Info | Allahabad',
+        "allahabaddata" : allahabaddata}
+    return render(request, "ALLAHABAD.html" , data)
+
+def MATHURA(request):
+    mathuradata = Mathura.objects.all()
+
+    data = {'title' : 'Travel India Info | Mathura',
+        "mathuradata" : mathuradata}
+    return render(request, "MATHURA.html" , data)
+
+def AYODHYA(request):
+    ayodhyadata = Ayodhya.objects.all()
+
+    data = {'title' : 'Travel India Info | Ayodhya',
+        "ayodhyadata" : ayodhyadata}
+    return render(request, "AYODHYA.html" , data)
+
+def MEERUT(request):
+    meerutdata = Meerut.objects.all()
+
+    data = {'title' : 'Travel India Info | Meerut',
+        "meerutdata" : meerutdata}
+    return render(request, "MEERUT.html" , data)
+
+
+
 
 def PUNJAB(request):
     punjabdata = Punjab.objects.all()
@@ -254,12 +341,75 @@ def PUNJAB(request):
         "punjabdata" : punjabdata}
     return render(request, "PUNJAB.html", data)
 
+def AMRITSAR(request):
+    amritsardata = Amritsar.objects.all()
+
+    data = {'title' : 'Travel India Info | Amritsar',
+        "amritsardata" : amritsardata}
+    return render(request, "AMRITSAR.html", data)
+
+def PATHANKOT(request):
+    pathankotdata = Pathankot.objects.all()
+
+    data = {'title' : 'Travel India Info | Pathankot',
+        "pathankotdata" : pathankotdata}
+    return render(request, "PATHANKOT.html", data)
+
+
+
+
 def UTTARAKHAND(request):
     uttarakhanddata = Uttarakhand.objects.all()
 
     data = {'title' : 'Travel India Info | Uttarakhand',
         "uttarakhanddata" : uttarakhanddata}
     return render(request, "UTTARAKHAND.html" , data)
+
+
+def RISHIKESH(request):
+    rishikeshdata = Rishikesh.objects.all()
+
+    data = {'title' : 'Travel India Info | Rishikesh',
+        "rishikeshdata" : rishikeshdata}
+    return render(request, "RISHIKESH.html" , data)
+
+def AULI(request):
+    aulidata = Auli.objects.all()
+
+    data = {'title' : 'Travel India Info | Auli',
+        "aulidata" : aulidata}
+    return render(request, "AULI.html" , data)
+
+def NAINITAL(request):
+    nainitaldata = Nainital.objects.all()
+
+    data = {'title' : 'Travel India Info | Nainital',
+        "nainitaldata" : nainitaldata}
+    return render(request, "NAINITAL.html" , data)
+
+def DEHRADUN(request):
+    dehradundata = Dehradun.objects.all()
+
+    data = {'title' : 'Travel India Info | Dehradun',
+        "dehradundata" : dehradundata}
+    return render(request, "DEHRADUN.html" , data)
+
+def MUSSOORIE(request):
+    mussooriedata = Mussoorie.objects.all()
+
+    data = {'title' : 'Travel India Info | Mussoorie',
+        "mussooriedata" : mussooriedata}
+    return render(request, "MUSSOORIE.html" , data)
+
+def HARIDWAR(request):
+    haridwardata = Haridwar.objects.all()
+
+    data = {'title' : 'Travel India Info | Haridwar',
+        "haridwardata" : haridwardata}
+    return render(request, "HARIDWAR.html" , data)
+
+
+
 
 
 # EAST places pages
