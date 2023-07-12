@@ -10,23 +10,23 @@ from Punjab.models import Punjab, Amritsar, Pathankot
 from Uttar_Pradesh.models import UttarPradesh , Agra, Varanasi, Vrindavan, Lucknow, Mathura, Allahabad, Ayodhya, Meerut
 from Uttarakhand.models import Uttarakhand, Rishikesh, Auli, Nainital, Dehradun,  Mussoorie, Haridwar
 
-from Assam.models import Assam
-from Sikkim.models import Sikkim
-from Meghalaya.models import Meghalaya
-from Arunachal_Pradesh.models import ArunachalPradesh
-from West_Bengal.models import WestBengal
+from Assam.models import Assam , Majuli, Guwahati
+from Sikkim.models import Sikkim, Gangtok, WestSikkim, NorthSikkim
+from Meghalaya.models import Meghalaya, Shillong, Cherrapunji, Williamnagar
+from Arunachal_Pradesh.models import ArunachalPradesh, Tawang, Itanagar
+from West_Bengal.models import WestBengal, Kolkata, Darjeeling, Sundarbans, Siliguri
 
-from Andhra_Pradesh.models import AndhraPradesh
-from Karnataka.models import Karnataka
-from Kerala.models import Kerala
-from Tamil_Nadu.models import TamilNadu
-from Telangana.models import Telangana
+from Andhra_Pradesh.models import AndhraPradesh, ArakuValley, Visakhapatnam, Tirupati, Anantapur,Kurnool
+from Karnataka.models import Karnataka, Coorg, Badami, Hampi
+from Kerala.models import Kerala, Munnar, Kumarakom
+from Tamil_Nadu.models import TamilNadu, Rameshwaram, Yercaud, Kodaikanal, Ooty, Chennai
+from Telangana.models import Telangana, Hyderabad, Warangal
 
-from Gujarat.models import Gujarat
-from Haryana.models import Haryana
-from Rajasthan.models import Rajasthan
+from Gujarat.models import Gujarat, Ahmedabad, Kutch, Vadodara
+from Haryana.models import Haryana, Chandigarh
+from Rajasthan.models import Rajasthan, Jaipur, Udaipur, Jaisalmer, Jodhpur
 from Goa.models import Goa
-from Maharashtra.models import Maharashtra
+from Maharashtra.models import Maharashtra, Mahabaleshwar, Mumbai
 
 from New_Delhi.models import NewDelhi
 
@@ -420,6 +420,25 @@ def ASSAM(request):
         "assamdata" : assamdata}
     return render(request, "ASSAM.html" , data)
 
+
+def MAJULI(request):
+    majulidata = Majuli.objects.all()
+
+    data = {'title' : 'Travel India Info | Majuli',
+        "majulidata" : majulidata}
+    return render(request, "MAJULI.html" , data)
+
+def GUWAHATI(request):
+    guwahatidata = Guwahati.objects.all()
+
+    data = {'title' : 'Travel India Info | Guwahati',
+        "guwahatidata" : guwahatidata}
+    return render(request, "GUWAHATI.html" , data)
+
+
+
+
+
 def SIKKIM(request):
 
     sikkimdata = Sikkim.objects.all()
@@ -428,12 +447,67 @@ def SIKKIM(request):
             "sikkimdata" : sikkimdata}
     return render(request, "SIKKIM.html" , data)
 
+
+def GANGTOK(request):
+
+    gangtokdata = Gangtok.objects.all()
+
+    data = { 'title' : 'Travel India Info | Gangtok',
+            "gangtokdata" : gangtokdata}
+    return render(request, "GANGTOK.html" , data)
+
+def WESTSIKKIM(request):
+
+    westsikkimdata = WestSikkim.objects.all()
+
+    data = { 'title' : 'Travel India Info | West Sikkim',
+            "westsikkimdata" : westsikkimdata}
+    return render(request, "WESTSIKKIM.html" , data)
+
+def NORTHSIKKIM(request):
+
+    northsikkimdata = NorthSikkim.objects.all()
+
+    data = { 'title' : 'Travel India Info | North Sikkim',
+            "northsikkimdata" : northsikkimdata}
+    return render(request, "NORTHSIKKIM.html" , data)
+
+
+
+
+
 def MEGHALAYA(request):
     meghalayadata = Meghalaya.objects.all()
 
     data = {'title' : 'Travel India Info | Meghalaya',
         "meghalayadata" : meghalayadata}
     return render(request, "MEGHALAYA.html" , data)
+
+
+def SHILLONG(request):
+    shillongdata = Shillong.objects.all()
+
+    data = {'title' : 'Travel India Info | Shillong',
+        "shillongdata" : shillongdata}
+    return render(request, "SHILLONG.html" , data)
+
+def CHERRAPUNJI(request):
+    cherrapunjidata = Cherrapunji.objects.all()
+
+    data = {'title' : 'Travel India Info | Cherrapunji',
+        "cherrapunjidata" : cherrapunjidata}
+    return render(request, "CHERRAPUNJI.html" , data)
+
+def WILLIAMNAGAR(request):
+    williamnagardata = Williamnagar.objects.all()
+
+    data = {'title' : 'Travel India Info | Williamnagar',
+        "williamnagardata" : williamnagardata}
+    return render(request, "WILLIAMNAGAR.html" , data)
+
+
+
+
 
 def ARUNACHAL(request):
     arunachaldata = ArunachalPradesh.objects.all()
@@ -442,12 +516,57 @@ def ARUNACHAL(request):
         "arunachaldata" : arunachaldata}
     return render(request, "ArunachalPradesh.html" , data)
 
+def TAWANG(request):
+    tawangdata = Tawang.objects.all()
+
+    data = {'title' : 'Travel India Info | Tawang',
+        "tawangdata" : tawangdata}
+    return render(request, "TAWANG.html" , data)
+
+def ITANAGAR(request):
+    itanagardata = Itanagar.objects.all()
+
+    data = {'title' : 'Travel India Info | Itanagar',
+        "itanagardata" : itanagardata}
+    return render(request, "ITANAGAR.html" , data)
+
+
+
+
 def WESTBengal(request):
     westbengaldata = WestBengal.objects.all()
 
     data = {'title' : 'Travel India Info | West Bengal',
         "westbengaldata" : westbengaldata}
-    return render(request, "WestBengal.html" , data)
+    return render(request, "WESTBENGAL.html" , data)
+
+def KOLKATA(request):
+    kolkatadata = Kolkata.objects.all()
+
+    data = {'title' : 'Travel India Info | Kolkata',
+        "kolkatadata" : kolkatadata}
+    return render(request, "KOLKATA.html" , data)
+
+def DARJEELING(request):
+    darjeelingdata = Darjeeling.objects.all()
+
+    data = {'title' : 'Travel India Info | Darjeeling',
+        "darjeelingdata" : darjeelingdata}
+    return render(request, "DARJEELING.html" , data)
+
+def SUNDARBANS(request):
+    sundarbansdata = Sundarbans.objects.all()
+
+    data = {'title' : 'Travel India Info | Sundarbans',
+        "sundarbansdata" : sundarbansdata}
+    return render(request, "SUNDARBANS.html" , data)
+
+def SILIGURI(request):
+    siliguridata = Siliguri.objects.all()
+
+    data = {'title' : 'Travel India Info | Siliguri',
+        "siliguridata" : siliguridata}
+    return render(request, "SILIGURI.html" , data)
 
 
 # SOUTH places pages
@@ -458,12 +577,80 @@ def ANDHRAPRADESH(request):
         "andhradata" : andhradata}
     return render(request, "ANDHRAPRADESH.html" , data)
 
+
+def ARAKUvalley(request):
+    arakuvalleydata = ArakuValley.objects.all()
+
+    data = {'title' : 'Travel India Info | Araku Valley',
+        "arakuvalleydata" : arakuvalleydata}
+    return render(request, "ARAKUvalley.html" , data)
+
+def VISAKHAPATNAM(request):
+    visakhapatnamdata = Visakhapatnam.objects.all()
+
+    data = {'title' : 'Travel India Info | Visakhapatnam',
+        "visakhapatnamdata" : visakhapatnamdata}
+    return render(request, "VISAKHAPATNAM.html" , data)
+
+
+def TIRUPATI(request):
+    tirupatidata = Tirupati.objects.all()
+
+    data = {'title' : 'Travel India Info | Tirupati',
+        "tirupatidata" : tirupatidata}
+    return render(request, "TIRUPATI.html" , data)
+
+
+def ANANTAPUR(request):
+    anantapurdata = Anantapur.objects.all()
+
+    data = {'title' : 'Travel India Info | Anantapur',
+        "anantapurdata" : anantapurdata}
+    return render(request, "ANANTAPUR.html" , data)
+
+
+def KURNOOL(request):
+    kurnooldata = Kurnool.objects.all()
+
+    data = {'title' : 'Travel India Info | Kurnool',
+        "kurnooldata" : kurnooldata}
+    return render(request, "KURNOOL.html" , data)
+
+
+
+
 def KARNATAKA(request):
     karnatakadata = Karnataka.objects.all()
 
     data = {'title' : 'Travel India Info | Karnataka',
         "karnatakadata" : karnatakadata}
     return render(request, "KARNATAKA.html" , data)
+
+
+def COORG(request):
+    coorgdata = Coorg.objects.all()
+
+    data = {'title' : 'Travel India Info | Coorg',
+        "coorgdata" : coorgdata}
+    return render(request, "COORG.html" , data)
+
+
+def BADAMI(request):
+    badamidata = Badami.objects.all()
+
+    data = {'title' : 'Travel India Info | Badami',
+        "badamidata" : badamidata}
+    return render(request, "BADAMI.html" , data)
+
+def HAMPI(request):
+    hampidata = Hampi.objects.all()
+
+    data = {'title' : 'Travel India Info | Hampi',
+        "hampidata" : hampidata}
+    return render(request, "HAMPI.html" , data)
+
+
+
 
 def KERALA(request):
     keraladata = Kerala.objects.all()
@@ -472,12 +659,66 @@ def KERALA(request):
         "keraladata" : keraladata}
     return render(request, "KERALA.html" , data)
 
+
+def MUNNAR(request):
+    munnardata = Munnar.objects.all()
+
+    data = {'title' : 'Travel India Info | Munnar',
+        "munnardata" : munnardata}
+    return render(request, "MUNNAR.html" , data)
+
+def KUMARAKOM(request):
+    kumarakomdata = Kumarakom.objects.all()
+
+    data = {'title' : 'Travel India Info | Kumarakom',
+        "kumarakomdata" : kumarakomdata}
+    return render(request, "KUMARAKOM.html" , data)
+
+
+
 def TAMILNADU(request):
-    tamildata = TamilNadu.objects.all()
+    tamilnadudata = TamilNadu.objects.all()
 
     data = {'title' : 'Travel India Info | Tamil Nadu',
-        "tamildata" : tamildata}
+        "tamilnadudata" : tamilnadudata}
     return render(request, "TAMILNADU.html" , data)
+
+def RAMESHWARAM(request):
+    rameshwaramdata = Rameshwaram.objects.all()
+
+    data = {'title' : 'Travel India Info | Rameshwaram',
+        "rameshwaramdata" : rameshwaramdata}
+    return render(request, "RAMESHWARAM.html" , data)
+
+def YERCAUD(request):
+    yercauddata = Yercaud.objects.all()
+
+    data = {'title' : 'Travel India Info | Yercaud',
+        "yercauddata" : yercauddata}
+    return render(request, "YERCAUD.html" , data)
+
+def KODAIKANAL(request):
+    kodaikanaldata = Kodaikanal.objects.all()
+
+    data = {'title' : 'Travel India Info | Kodaikanal',
+        "kodaikanaldata" : kodaikanaldata}
+    return render(request, "KODAIKANAL.html" , data)
+
+def OOTY(request):
+    ootydata = Ooty.objects.all()
+
+    data = {'title' : 'Travel India Info | Ooty',
+        "ootydata" : ootydata}
+    return render(request, "OOTY.html" , data)
+
+def CHENNAI(request):
+    chennaidata = Chennai.objects.all()
+
+    data = {'title' : 'Travel India Info | Chennai',
+        "chennaidata" : chennaidata}
+    return render(request, "CHENNAI.html" , data)
+
+
 
 def TELANGANA(request):
     telanganadata = Telangana.objects.all()
@@ -485,6 +726,22 @@ def TELANGANA(request):
     data = {'title' : 'Travel India Info | Telangana',
         "telanganadata" : telanganadata}
     return render(request, "TELANGANA.html" , data)
+
+
+def HYDERABAD(request):
+    hyderabaddata = Hyderabad.objects.all()
+
+    data = {'title' : 'Travel India Info | Hyderabad',
+        "hyderabaddata" : hyderabaddata}
+    return render(request, "HYDERABAD.html" , data)
+
+
+def WARANGAL(request):
+    warangaldata = Warangal.objects.all()
+
+    data = {'title' : 'Travel India Info | Warangal',
+        "warangaldata" : warangaldata}
+    return render(request, "WARANGAL.html" , data)
 
 
 # WEST places pages
@@ -495,12 +752,48 @@ def GUJARAT(request):
         "gujaratdata" : gujaratdata}
     return render(request, "GUJARAT.html" , data)
 
+
+def AHMEDABAD(request):
+    ahmedabaddata = Ahmedabad.objects.all()
+
+    data = {'title' : 'Travel India Info | Ahmedabad',
+        "ahmedabaddata" : ahmedabaddata}
+    return render(request, "AHMEDABAD.html" , data)
+
+
+def KUTCH(request):
+    kutchdata = Kutch.objects.all()
+
+    data = {'title' : 'Travel India Info | Kutch',
+        "kutchdata" : kutchdata}
+    return render(request, "KUTCH.html" , data)
+
+def VADODARA(request):
+    vadodaradata = Vadodara.objects.all()
+
+    data = {'title' : 'Travel India Info | Vadodara',
+        "vadodaradata" : vadodaradata}
+    return render(request, "VADODARA.html" , data)
+
+
+
 def HARYANA(request):
     haryanadata = Haryana.objects.all()
 
     data = {'title' : 'Travel India Info | Haryana',
         "haryanadata" : haryanadata}
     return render(request, "HARYANA.html" , data)
+
+
+def CHANDIGARH(request):
+    chandigarhdata = Chandigarh.objects.all()
+
+    data = {'title' : 'Travel India Info | Chandigarh',
+        "chandigarhdata" : chandigarhdata}
+    return render(request, "CHANDIGARH.html" , data)
+
+
+
 
 def RAJASTHAN(request):
     rajasthandata = Rajasthan.objects.all()
@@ -509,6 +802,40 @@ def RAJASTHAN(request):
         "rajasthandata" : rajasthandata}
     return render(request, "RAJASTHAN.html" , data)
 
+
+def JAIPUR(request):
+    jaipurdata = Jaipur.objects.all()
+
+    data = {'title' : 'Travel India Info | Jaipur',
+        "jaipurdata" : jaipurdata}
+    return render(request, "JAIPUR.html" , data)
+
+
+def UDAIPUR(request):
+    udaipurdata = Udaipur.objects.all()
+
+    data = {'title' : 'Travel India Info | Udaipur',
+        "udaipurdata" : udaipurdata}
+    return render(request, "UDAIPUR.html" , data)
+
+
+def JAISALMER(request):
+    jaisalmerdata = Jaisalmer.objects.all()
+
+    data = {'title' : 'Travel India Info | Jaisalmer',
+        "jaisalmerdata" : jaisalmerdata}
+    return render(request, "JAISALMER.html" , data)
+
+
+def JODHPUR(request):
+    jodhpurdata = Jodhpur.objects.all()
+
+    data = {'title' : 'Travel India Info | Jodhpur',
+        "jodhpurdata" : jodhpurdata}
+    return render(request, "JODHPUR.html" , data)
+
+
+
 def GOA(request):
     goadata = Goa.objects.all()
 
@@ -516,12 +843,31 @@ def GOA(request):
         "goadata" : goadata}
     return render(request, "GOA.html" , data)
 
+
+
 def MAHARASHTRA(request):
     maharashtradata = Maharashtra.objects.all()
 
     data = {'title' : 'Travel India Info | Maharashtra',
         "maharashtradata" : maharashtradata}
     return render(request, "MAHARASHTRA.html" , data)
+
+
+def MAHABALESHWAR(request):
+    mahabaleshwardata = Mahabaleshwar.objects.all()
+
+    data = {'title' : 'Travel India Info | Mahabaleshwar',
+        "mahabaleshwardata" : mahabaleshwardata}
+    return render(request, "MAHABALESHWAR.html" , data)
+
+
+def MUMBAI(request):
+    mumbaidata = Mumbai.objects.all()
+
+    data = {'title' : 'Travel India Info | Mumbai',
+        "mumbaidata" : mumbaidata}
+    return render(request, "MUMBAI.html" , data)
+
 
 # Center pages
 def NEWDelhi(request):

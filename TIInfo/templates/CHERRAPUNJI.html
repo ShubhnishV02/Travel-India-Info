@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block section %}
+<section>
+    <div class="container d-flex">
+        <div class="flex-shrink-1 p-3 bg-body-secondary" style="width: 185px; height: 521px;">
+            <a href="{% url 'cherrapunji' %}"
+                class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+                <svg class="bi pe-none" width="20" height="24"></svg>
+                <span class="fs-3 fw-semibold">Cherrapunji<br></span>
+            </a>
+            <ul class="list-unstyled ps-0">
+                <li class="mb-1">
+                    <button
+                        class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed px-3 fs-5 fw-semibold"
+                        data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                        Home
+                    </button>
+                    <div class="collapse" id="home-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="{% url 'aboutus' %}"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">-
+                                    About</a></li>
+                            <li><a href="{% url 'explore' %}"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">-
+                                    Explore</a></li>
+                            <li><a href="{% url 'contactus' %}"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">-
+                                    Contact Us</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="mb-1">
+                    <button
+                        class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed px-3 fs-5 fw-semibold"
+                        data-bs-toggle="collapse" data-bs-target="#services-collapse" aria-expanded="false">
+                        Services
+                    </button>
+                    <div class="collapse" id="services-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="{% url 'book-a-guide' %}"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">-
+                                    Book A Guide</a></li>
+                            <li><a href="{% url 'feedback' %}"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded px-3 fs-6">-
+                                    Feedback</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <div class="d-block col-8">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb m-3">
+                    <li class="breadcrumb-item"><a href="{% url 'homepage' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'explore' %}">Explore</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'meghalaya' %}">Meghalaya</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Cherrapunji</li>
+                </ol>
+            </nav>
+
+
+
+
+            {% comment %} <div class="container">
+                <h3>Cherrapunji - Meghalaya Places</h3>
+            </div> {% endcomment %}
+            <div class="container">
+
+                {% for i in cherrapunjidata %}
+                <div class="card mb-3">
+                    <img src="/media/{{i.Image}}" class="card-img-top my-2 container " alt="..." height=470>
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.Place_name}}</h5>
+                        <p class="card-text" style="font-size:13px;">
+
+                            {{i.Desc | safe}}
+
+                        </p>
+
+                        <p class="mx-2" style="font-size:13px;"><small class="text-body-secondary">Last updated on
+                                {{i.Pub_date}}</small></p>
+                        <!-- Example split danger button -->
+
+                        <div class=" d-flex mb-3">
+                            <div class="btn-group mx-2">
+                                <button type="button" class="btn btn-info px-5 fs-6 fw-semibold">Details</button>
+                                <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu p-3 text-secondary border-secondary bg-body-secondary"
+                                    style="width: 300px;">
+                                    <p class="fs-5 fw-semibold text-success">
+                                        Weather:
+                                    </p>
+                                    <div>
+                                        <h6>Best Time:</h6>
+                                        <p style="font-size:13px;">{{i.Best_Time}}</p>
+                                        <h6>Avoid Time:</h6>
+                                        <p style="font-size:13px;">{{i.Avoid_Time}}</p>
+
+                                    </div>
+                                    <div>
+                                        <h6>Ideal Duration:</h6>
+                                        <p style="font-size:13px;">{{i.Ideal_Duration}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="btn-group mx-1">
+                                <button type="button" class="btn btn-info px-3 fs-6 fw-semibold">More</button>
+                                <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu p-3 text-secondary border-secondary"
+                                    style="width: 400px; background-color: #ffeecc;">
+                                    <div>
+                                        {{i.More | safe}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

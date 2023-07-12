@@ -105,6 +105,63 @@ urlpatterns = [
     path('mussoorie/',views.MUSSOORIE,name="mussoorie"),
     path('haridwar/',views.HARIDWAR,name="haridwar"),
 
+    path('majuli/',views.MAJULI,name="majuli"),
+    path('guwahati/',views.GUWAHATI,name="guwahati"),
+
+    path('gangtok/',views.GANGTOK,name="gangtok"),
+    path('westsikkim/',views.WESTSIKKIM,name="westsikkim"),
+    path('northsikkim/',views.NORTHSIKKIM,name="northsikkim"),
+
+    path('shillong/',views.SHILLONG,name="shillong"),
+    path('cherrapunji/',views.CHERRAPUNJI,name="cherrapunji"),
+    path('williamnagar/',views.WILLIAMNAGAR,name="williamnagar"),
+
+    path('tawang/',views.TAWANG,name="tawang"),
+    path('itanagar/',views.ITANAGAR,name="itanagar"),
+
+    path('kolkata/',views.KOLKATA,name="kolkata"),
+    path('darjeeling/',views.DARJEELING,name="darjeeling"),
+    path('sundarbans/',views.SUNDARBANS,name="sundarbans"),
+    path('siliguri/',views.SILIGURI,name="siliguri"),
+
+    path('arakuvalley/',views.ARAKUvalley,name="arakuvalley"),
+    path('visakhapatnam/',views.VISAKHAPATNAM,name="visakhapatnam"),
+    path('tirupati/',views.TIRUPATI,name="tirupati"),
+    path('anantapur/',views.ANANTAPUR,name="anantapur"),
+    path('kurnool/',views.KURNOOL,name="kurnool"),
+
+    path('coorg/',views.COORG,name="coorg"),
+    path('badami/',views.BADAMI,name="badami"),
+    path('hampi/',views.HAMPI,name="hampi"),
+
+    path('munnar/',views.MUNNAR,name="munnar"),
+    path('kumarakom/',views.KUMARAKOM,name="kumarakom"),
+
+    path('rameshwaram/',views.RAMESHWARAM,name="rameshwaram"),
+    path('yercaud/',views.YERCAUD,name="yercaud"),
+    path('kodaikanal/',views.KODAIKANAL,name="kodaikanal"),
+    path('ooty/',views.OOTY,name="ooty"),
+    path('chennai/',views.CHENNAI,name="chennai"),
+
+    path('hyderabad/',views.HYDERABAD,name="hyderabad"),
+    path('warangal/',views.WARANGAL,name="warangal"),
+
+    path('ahmedabad/',views.AHMEDABAD,name="ahmedabad"),
+    path('kutch/',views.KUTCH,name="kutch"),
+    path('vadodara/',views.VADODARA,name="vadodara"),
+
+    path('chandigarh/',views.CHANDIGARH,name="chandigarh"),
+
+    path('jaipur/',views.JAIPUR,name="jaipur"),
+    path('udaipur/',views.UDAIPUR,name="udaipur"),
+    path('jaisalmer/',views.JAISALMER,name="jaisalmer"),
+    path('jodhpur/',views.JODHPUR,name="jodhpur"),
+
+    path('mahabaleshwar/',views.MAHABALESHWAR,name="mahabaleshwar"),
+    path('mumbai/',views.MUMBAI,name="mumbai"),
+
+
+
     path("jammu-kashmir/", include("JammuAndKashmir.urls")),
     
     
