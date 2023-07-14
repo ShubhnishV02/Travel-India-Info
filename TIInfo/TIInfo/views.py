@@ -29,6 +29,7 @@ from Goa.models import Goa
 from Maharashtra.models import Maharashtra, Mahabaleshwar, Mumbai
 
 from New_Delhi.models import NewDelhi
+from Customer.models import Feedback
 
 
 
@@ -175,11 +176,47 @@ def BookGuide(request):
     }
     return render(request, "BookGuide.html" , data)
     
-def Feedback(request):
+def saveFEEDback(request):
     data = {'title' : 'Travel India Info | Feedback'
-        
     }
-    return render(request, "Feedback.html" , data)
+
+    if request.method=="POST":
+        if request.POST.get('name')=="":
+            return render(request,"FEEDback.html",{'error':True})
+        elif request.POST.get('email')=="":
+            return render(request,"FEEDback.html",{'error':True})
+        elif request.POST.get('Country')=="":
+            return render(request,"FEEDback.html",{'error':True})   
+        elif request.POST.get('comment')=="":
+            return render(request,"FEEDback.html",{'error':True})      
+    else:
+        print("invalid method")
+
+    
+    if request.method == "POST" :
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        phone = request.POST.get("phone")
+        country = request.POST.get("Country")
+        message = request.POST.get("comment")
+
+        feedback_details = Feedback(customer_name=name, customer_email=email, customer_phone=phone, customer_country=country, customer_message=message)
+        feedback_details.save()
+        return render(request, "Thankyou.html" , data)
+    return render(request, "Thankyou.html" , data)
+
+
+def FEEDback(request):
+    data = {'title' : 'Travel India Info | Feedback'
+    }
+    return render(request, "FEEDback.html", data)
+
+def Thankyou(request):
+    data = {'title' : 'Travel India Info | Feedback'
+    }
+    return render(request, "Thankyou.html", data)
+
+
 
 def Payment(request):
     data = {'title' : 'Travel India Info | Payment Page'
@@ -195,35 +232,35 @@ def JammuKashmir(request):
 
     data = {'title' : 'Travel India Info | Jammu & Kashmir',
         "JandKdata" : JandKdata}
-    return render(request, "JammuKashmir.html", data)
+    return render(request, "Jammu-Kashmir/JammuKashmir.html", data)
 
 def GULMARG(request):
     gulmargdata = Gulmarg.objects.all()
 
     data = {'title' : 'Travel India Info | Gulmarg',
         "gulmargdata" : gulmargdata}
-    return render(request, "GULMARG.html", data)
+    return render(request, "Jammu-Kashmir/GULMARG.html", data)
 
 def SRINAGAR(request):
     srinagardata = Srinagar.objects.all()
 
     data = {'title' : 'Travel India Info | Srinagar',
         "srinagardata" : srinagardata}
-    return render(request, "SRINAGAR.html", data)
+    return render(request, "Jammu-Kashmir/SRINAGAR.html", data)
 
 def PAHALGAM(request):
     pahalgamdata = Pahalgam.objects.all()
 
     data = {'title' : 'Travel India Info | Pahalgam',
         "pahalgamdata" : pahalgamdata}
-    return render(request, "PAHALGAM.html", data)
+    return render(request, "Jammu-Kashmir/PAHALGAM.html", data)
 
 def ANANTNAG(request):
     anantnagdata = Anantnag.objects.all()
 
     data = {'title' : 'Travel India Info | Anantnag',
         "anantnagdata" : anantnagdata}
-    return render(request, "ANANTNAG.html", data)
+    return render(request, "Jammu-Kashmir/ANANTNAG.html", data)
 
 
 
@@ -234,35 +271,35 @@ def Himachalpradesh(request):
 
     data = {'title' : 'Travel India Info | Himachal Pradesh',
         "himachaldata" : himachaldata}
-    return render(request, "HimachalPradesh.html", data)
+    return render(request, "Himachal-Pradesh/HimachalPradesh.html", data)
 
 def MANALI(request):
     manalidata = Manali.objects.all()
 
     data = {'title' : 'Travel India Info | Manali',
         "manalidata" : manalidata}
-    return render(request, "MANALI.html", data)
+    return render(request, "Himachal-Pradesh/MANALI.html", data)
 
 def KASOL(request):
     kasoldata = Kasol.objects.all()
 
     data = {'title' : 'Travel India Info | Kasol',
         "kasoldata" : kasoldata}
-    return render(request, "KASOL.html", data)
+    return render(request, "Himachal-Pradesh/KASOL.html", data)
 
 def SHIMLA(request):
     shimladata = Shimla.objects.all()
 
     data = {'title' : 'Travel India Info | Shimla',
         "shimladata" : shimladata}
-    return render(request, "SHIMLA.html", data)
+    return render(request, "Himachal-Pradesh/SHIMLA.html", data)
 
 def DALHOUSIE(request):
     dalhousiedata = Dalhousie.objects.all()
 
     data = {'title' : 'Travel India Info | Dalhousie',
         "dalhousiedata" : dalhousiedata}
-    return render(request, "DALHOUSIE.html", data)
+    return render(request, "Himachal-Pradesh/DALHOUSIE.html", data)
 
 
 
@@ -273,63 +310,63 @@ def UTTARPRADESH(request):
 
     data = {'title' : 'Travel India Info | Uttar Pradesh',
         "uttarpradeshdata" : uttarpradeshdata}
-    return render(request, "UttarPradesh.html" , data)
+    return render(request, "Uttar-Pradesh/UttarPradesh.html" , data)
 
 def AGRA(request):
     agradata = Agra.objects.all()
 
     data = {'title' : 'Travel India Info | AGRA',
         "agradata" : agradata}
-    return render(request, "AGRA.html" , data)
+    return render(request, "Uttar-Pradesh/AGRA.html" , data)
 
 def VARANASI(request):
     varanasidata = Varanasi.objects.all()
 
     data = {'title' : 'Travel India Info | Varanasi',
         "varanasidata" : varanasidata}
-    return render(request, "VARANASI.html" , data)
+    return render(request, "Uttar-Pradesh/VARANASI.html" , data)
 
 def VRINDAVAN(request):
     vrindavandata = Vrindavan.objects.all()
 
     data = {'title' : 'Travel India Info | Vrindavan',
         "vrindavandata" : vrindavandata}
-    return render(request, "VRINDAVAN.html" , data)
+    return render(request, "Uttar-Pradesh/VRINDAVAN.html" , data)
 
 def LUCKNOW(request):
     lucknowdata = Lucknow.objects.all()
 
     data = {'title' : 'Travel India Info | Lucknow',
         "lucknowdata" : lucknowdata}
-    return render(request, "LUCKNOW.html" , data)
+    return render(request, "Uttar-Pradesh/LUCKNOW.html" , data)
 
 def ALLAHABAD(request):
     allahabaddata = Allahabad.objects.all()
 
     data = {'title' : 'Travel India Info | Allahabad',
         "allahabaddata" : allahabaddata}
-    return render(request, "ALLAHABAD.html" , data)
+    return render(request, "Uttar-Pradesh/ALLAHABAD.html" , data)
 
 def MATHURA(request):
     mathuradata = Mathura.objects.all()
 
     data = {'title' : 'Travel India Info | Mathura',
         "mathuradata" : mathuradata}
-    return render(request, "MATHURA.html" , data)
+    return render(request, "Uttar-Pradesh/MATHURA.html" , data)
 
 def AYODHYA(request):
     ayodhyadata = Ayodhya.objects.all()
 
     data = {'title' : 'Travel India Info | Ayodhya',
         "ayodhyadata" : ayodhyadata}
-    return render(request, "AYODHYA.html" , data)
+    return render(request, "Uttar-Pradesh/AYODHYA.html" , data)
 
 def MEERUT(request):
     meerutdata = Meerut.objects.all()
 
     data = {'title' : 'Travel India Info | Meerut',
         "meerutdata" : meerutdata}
-    return render(request, "MEERUT.html" , data)
+    return render(request, "Uttar-Pradesh/MEERUT.html" , data)
 
 
 
@@ -339,21 +376,21 @@ def PUNJAB(request):
 
     data = {'title' : 'Travel India Info | Punjab',
         "punjabdata" : punjabdata}
-    return render(request, "PUNJAB.html", data)
+    return render(request, "Punjab/PUNJAB.html", data)
 
 def AMRITSAR(request):
     amritsardata = Amritsar.objects.all()
 
     data = {'title' : 'Travel India Info | Amritsar',
         "amritsardata" : amritsardata}
-    return render(request, "AMRITSAR.html", data)
+    return render(request, "Punjab/AMRITSAR.html", data)
 
 def PATHANKOT(request):
     pathankotdata = Pathankot.objects.all()
 
     data = {'title' : 'Travel India Info | Pathankot',
         "pathankotdata" : pathankotdata}
-    return render(request, "PATHANKOT.html", data)
+    return render(request, "Punjab/PATHANKOT.html", data)
 
 
 
@@ -363,7 +400,7 @@ def UTTARAKHAND(request):
 
     data = {'title' : 'Travel India Info | Uttarakhand',
         "uttarakhanddata" : uttarakhanddata}
-    return render(request, "UTTARAKHAND.html" , data)
+    return render(request, "Uttarakhand/UTTARAKHAND.html" , data)
 
 
 def RISHIKESH(request):
@@ -371,42 +408,42 @@ def RISHIKESH(request):
 
     data = {'title' : 'Travel India Info | Rishikesh',
         "rishikeshdata" : rishikeshdata}
-    return render(request, "RISHIKESH.html" , data)
+    return render(request, "Uttarakhand/RISHIKESH.html" , data)
 
 def AULI(request):
     aulidata = Auli.objects.all()
 
     data = {'title' : 'Travel India Info | Auli',
         "aulidata" : aulidata}
-    return render(request, "AULI.html" , data)
+    return render(request, "Uttarakhand/AULI.html" , data)
 
 def NAINITAL(request):
     nainitaldata = Nainital.objects.all()
 
     data = {'title' : 'Travel India Info | Nainital',
         "nainitaldata" : nainitaldata}
-    return render(request, "NAINITAL.html" , data)
+    return render(request, "Uttarakhand/NAINITAL.html" , data)
 
 def DEHRADUN(request):
     dehradundata = Dehradun.objects.all()
 
     data = {'title' : 'Travel India Info | Dehradun',
         "dehradundata" : dehradundata}
-    return render(request, "DEHRADUN.html" , data)
+    return render(request, "Uttarakhand/DEHRADUN.html" , data)
 
 def MUSSOORIE(request):
     mussooriedata = Mussoorie.objects.all()
 
     data = {'title' : 'Travel India Info | Mussoorie',
         "mussooriedata" : mussooriedata}
-    return render(request, "MUSSOORIE.html" , data)
+    return render(request, "Uttarakhand/MUSSOORIE.html" , data)
 
 def HARIDWAR(request):
     haridwardata = Haridwar.objects.all()
 
     data = {'title' : 'Travel India Info | Haridwar',
         "haridwardata" : haridwardata}
-    return render(request, "HARIDWAR.html" , data)
+    return render(request, "Uttarakhand/HARIDWAR.html" , data)
 
 
 
@@ -418,7 +455,7 @@ def ASSAM(request):
 
     data = {'title' : 'Travel India Info | Assam',
         "assamdata" : assamdata}
-    return render(request, "ASSAM.html" , data)
+    return render(request, "Assam/ASSAM.html" , data)
 
 
 def MAJULI(request):
@@ -426,14 +463,14 @@ def MAJULI(request):
 
     data = {'title' : 'Travel India Info | Majuli',
         "majulidata" : majulidata}
-    return render(request, "MAJULI.html" , data)
+    return render(request, "Assam/MAJULI.html" , data)
 
 def GUWAHATI(request):
     guwahatidata = Guwahati.objects.all()
 
     data = {'title' : 'Travel India Info | Guwahati',
         "guwahatidata" : guwahatidata}
-    return render(request, "GUWAHATI.html" , data)
+    return render(request, "Assam/GUWAHATI.html" , data)
 
 
 
@@ -445,7 +482,7 @@ def SIKKIM(request):
 
     data = { 'title' : 'Travel India Info | Sikkim',
             "sikkimdata" : sikkimdata}
-    return render(request, "SIKKIM.html" , data)
+    return render(request, "Sikkim/SIKKIM.html" , data)
 
 
 def GANGTOK(request):
@@ -454,7 +491,7 @@ def GANGTOK(request):
 
     data = { 'title' : 'Travel India Info | Gangtok',
             "gangtokdata" : gangtokdata}
-    return render(request, "GANGTOK.html" , data)
+    return render(request, "Sikkim/GANGTOK.html" , data)
 
 def WESTSIKKIM(request):
 
@@ -462,7 +499,7 @@ def WESTSIKKIM(request):
 
     data = { 'title' : 'Travel India Info | West Sikkim',
             "westsikkimdata" : westsikkimdata}
-    return render(request, "WESTSIKKIM.html" , data)
+    return render(request, "Sikkim/WESTSIKKIM.html" , data)
 
 def NORTHSIKKIM(request):
 
@@ -470,7 +507,7 @@ def NORTHSIKKIM(request):
 
     data = { 'title' : 'Travel India Info | North Sikkim',
             "northsikkimdata" : northsikkimdata}
-    return render(request, "NORTHSIKKIM.html" , data)
+    return render(request, "Sikkim/NORTHSIKKIM.html" , data)
 
 
 
@@ -481,7 +518,7 @@ def MEGHALAYA(request):
 
     data = {'title' : 'Travel India Info | Meghalaya',
         "meghalayadata" : meghalayadata}
-    return render(request, "MEGHALAYA.html" , data)
+    return render(request, "Meghalaya/MEGHALAYA.html" , data)
 
 
 def SHILLONG(request):
@@ -489,21 +526,21 @@ def SHILLONG(request):
 
     data = {'title' : 'Travel India Info | Shillong',
         "shillongdata" : shillongdata}
-    return render(request, "SHILLONG.html" , data)
+    return render(request, "Meghalaya/SHILLONG.html" , data)
 
 def CHERRAPUNJI(request):
     cherrapunjidata = Cherrapunji.objects.all()
 
     data = {'title' : 'Travel India Info | Cherrapunji',
         "cherrapunjidata" : cherrapunjidata}
-    return render(request, "CHERRAPUNJI.html" , data)
+    return render(request, "Meghalaya/CHERRAPUNJI.html" , data)
 
 def WILLIAMNAGAR(request):
     williamnagardata = Williamnagar.objects.all()
 
     data = {'title' : 'Travel India Info | Williamnagar',
         "williamnagardata" : williamnagardata}
-    return render(request, "WILLIAMNAGAR.html" , data)
+    return render(request, "Meghalaya/WILLIAMNAGAR.html" , data)
 
 
 
@@ -514,21 +551,21 @@ def ARUNACHAL(request):
 
     data = {'title' : 'Travel India Info | Arunachal Pradesh',
         "arunachaldata" : arunachaldata}
-    return render(request, "ArunachalPradesh.html" , data)
+    return render(request, "Arunachal-Pradesh/ArunachalPradesh.html" , data)
 
 def TAWANG(request):
     tawangdata = Tawang.objects.all()
 
     data = {'title' : 'Travel India Info | Tawang',
         "tawangdata" : tawangdata}
-    return render(request, "TAWANG.html" , data)
+    return render(request, "Arunachal-Pradesh/TAWANG.html" , data)
 
 def ITANAGAR(request):
     itanagardata = Itanagar.objects.all()
 
     data = {'title' : 'Travel India Info | Itanagar',
         "itanagardata" : itanagardata}
-    return render(request, "ITANAGAR.html" , data)
+    return render(request, "Arunachal-Pradesh/ITANAGAR.html" , data)
 
 
 
@@ -538,35 +575,37 @@ def WESTBengal(request):
 
     data = {'title' : 'Travel India Info | West Bengal',
         "westbengaldata" : westbengaldata}
-    return render(request, "WESTBENGAL.html" , data)
+    return render(request, "West-Bengal/WESTBENGAL.html" , data)
 
 def KOLKATA(request):
     kolkatadata = Kolkata.objects.all()
 
     data = {'title' : 'Travel India Info | Kolkata',
         "kolkatadata" : kolkatadata}
-    return render(request, "KOLKATA.html" , data)
+    return render(request, "West-Bengal/KOLKATA.html" , data)
 
 def DARJEELING(request):
     darjeelingdata = Darjeeling.objects.all()
 
     data = {'title' : 'Travel India Info | Darjeeling',
         "darjeelingdata" : darjeelingdata}
-    return render(request, "DARJEELING.html" , data)
+    return render(request, "West-Bengal/DARJEELING.html" , data)
 
 def SUNDARBANS(request):
     sundarbansdata = Sundarbans.objects.all()
 
     data = {'title' : 'Travel India Info | Sundarbans',
         "sundarbansdata" : sundarbansdata}
-    return render(request, "SUNDARBANS.html" , data)
+    return render(request, "West-Bengal/SUNDARBANS.html" , data)
 
 def SILIGURI(request):
     siliguridata = Siliguri.objects.all()
 
     data = {'title' : 'Travel India Info | Siliguri',
         "siliguridata" : siliguridata}
-    return render(request, "SILIGURI.html" , data)
+    return render(request, "West-Bengal/SILIGURI.html" , data)
+
+
 
 
 # SOUTH places pages
@@ -575,7 +614,7 @@ def ANDHRAPRADESH(request):
 
     data = {'title' : 'Travel India Info | Andhra Pradesh',
         "andhradata" : andhradata}
-    return render(request, "ANDHRAPRADESH.html" , data)
+    return render(request, "Andhra-Pradesh/ANDHRAPRADESH.html" , data)
 
 
 def ARAKUvalley(request):
@@ -583,14 +622,14 @@ def ARAKUvalley(request):
 
     data = {'title' : 'Travel India Info | Araku Valley',
         "arakuvalleydata" : arakuvalleydata}
-    return render(request, "ARAKUvalley.html" , data)
+    return render(request, "Andhra-Pradesh/ARAKUvalley.html" , data)
 
 def VISAKHAPATNAM(request):
     visakhapatnamdata = Visakhapatnam.objects.all()
 
     data = {'title' : 'Travel India Info | Visakhapatnam',
         "visakhapatnamdata" : visakhapatnamdata}
-    return render(request, "VISAKHAPATNAM.html" , data)
+    return render(request, "Andhra-Pradesh/VISAKHAPATNAM.html" , data)
 
 
 def TIRUPATI(request):
@@ -598,7 +637,7 @@ def TIRUPATI(request):
 
     data = {'title' : 'Travel India Info | Tirupati',
         "tirupatidata" : tirupatidata}
-    return render(request, "TIRUPATI.html" , data)
+    return render(request, "Andhra-Pradesh/TIRUPATI.html" , data)
 
 
 def ANANTAPUR(request):
@@ -606,7 +645,7 @@ def ANANTAPUR(request):
 
     data = {'title' : 'Travel India Info | Anantapur',
         "anantapurdata" : anantapurdata}
-    return render(request, "ANANTAPUR.html" , data)
+    return render(request, "Andhra-Pradesh/ANANTAPUR.html" , data)
 
 
 def KURNOOL(request):
@@ -614,7 +653,8 @@ def KURNOOL(request):
 
     data = {'title' : 'Travel India Info | Kurnool',
         "kurnooldata" : kurnooldata}
-    return render(request, "KURNOOL.html" , data)
+    return render(request, "Andhra-Pradesh/KURNOOL.html" , data)
+
 
 
 
@@ -624,7 +664,7 @@ def KARNATAKA(request):
 
     data = {'title' : 'Travel India Info | Karnataka',
         "karnatakadata" : karnatakadata}
-    return render(request, "KARNATAKA.html" , data)
+    return render(request, "Karnataka/KARNATAKA.html" , data)
 
 
 def COORG(request):
@@ -632,7 +672,7 @@ def COORG(request):
 
     data = {'title' : 'Travel India Info | Coorg',
         "coorgdata" : coorgdata}
-    return render(request, "COORG.html" , data)
+    return render(request, "Karnataka/COORG.html" , data)
 
 
 def BADAMI(request):
@@ -640,14 +680,14 @@ def BADAMI(request):
 
     data = {'title' : 'Travel India Info | Badami',
         "badamidata" : badamidata}
-    return render(request, "BADAMI.html" , data)
+    return render(request, "Karnataka/BADAMI.html" , data)
 
 def HAMPI(request):
     hampidata = Hampi.objects.all()
 
     data = {'title' : 'Travel India Info | Hampi',
         "hampidata" : hampidata}
-    return render(request, "HAMPI.html" , data)
+    return render(request, "Karnataka/HAMPI.html" , data)
 
 
 
@@ -657,7 +697,7 @@ def KERALA(request):
 
     data = {'title' : 'Travel India Info | Kerala',
         "keraladata" : keraladata}
-    return render(request, "KERALA.html" , data)
+    return render(request, "Kerala/KERALA.html" , data)
 
 
 def MUNNAR(request):
@@ -665,14 +705,14 @@ def MUNNAR(request):
 
     data = {'title' : 'Travel India Info | Munnar',
         "munnardata" : munnardata}
-    return render(request, "MUNNAR.html" , data)
+    return render(request, "Kerala/MUNNAR.html" , data)
 
 def KUMARAKOM(request):
     kumarakomdata = Kumarakom.objects.all()
 
     data = {'title' : 'Travel India Info | Kumarakom',
         "kumarakomdata" : kumarakomdata}
-    return render(request, "KUMARAKOM.html" , data)
+    return render(request, "Kerala/KUMARAKOM.html" , data)
 
 
 
@@ -681,42 +721,44 @@ def TAMILNADU(request):
 
     data = {'title' : 'Travel India Info | Tamil Nadu',
         "tamilnadudata" : tamilnadudata}
-    return render(request, "TAMILNADU.html" , data)
+    return render(request, "Tamil-Nadu/TAMILNADU.html" , data)
 
 def RAMESHWARAM(request):
     rameshwaramdata = Rameshwaram.objects.all()
 
     data = {'title' : 'Travel India Info | Rameshwaram',
         "rameshwaramdata" : rameshwaramdata}
-    return render(request, "RAMESHWARAM.html" , data)
+    return render(request, "Tamil-Nadu/RAMESHWARAM.html" , data)
 
 def YERCAUD(request):
     yercauddata = Yercaud.objects.all()
 
     data = {'title' : 'Travel India Info | Yercaud',
         "yercauddata" : yercauddata}
-    return render(request, "YERCAUD.html" , data)
+    return render(request, "Tamil-Nadu/YERCAUD.html" , data)
 
 def KODAIKANAL(request):
     kodaikanaldata = Kodaikanal.objects.all()
 
     data = {'title' : 'Travel India Info | Kodaikanal',
         "kodaikanaldata" : kodaikanaldata}
-    return render(request, "KODAIKANAL.html" , data)
+    return render(request, "Tamil-Nadu/KODAIKANAL.html" , data)
 
 def OOTY(request):
     ootydata = Ooty.objects.all()
 
     data = {'title' : 'Travel India Info | Ooty',
         "ootydata" : ootydata}
-    return render(request, "OOTY.html" , data)
+    return render(request, "Tamil-Nadu/OOTY.html" , data)
 
 def CHENNAI(request):
     chennaidata = Chennai.objects.all()
 
     data = {'title' : 'Travel India Info | Chennai',
         "chennaidata" : chennaidata}
-    return render(request, "CHENNAI.html" , data)
+    return render(request, "Tamil-Nadu/CHENNAI.html" , data)
+
+
 
 
 
@@ -725,23 +767,24 @@ def TELANGANA(request):
 
     data = {'title' : 'Travel India Info | Telangana',
         "telanganadata" : telanganadata}
-    return render(request, "TELANGANA.html" , data)
-
+    return render(request, "Telangana/TELANGANA.html" , data)
 
 def HYDERABAD(request):
     hyderabaddata = Hyderabad.objects.all()
 
     data = {'title' : 'Travel India Info | Hyderabad',
         "hyderabaddata" : hyderabaddata}
-    return render(request, "HYDERABAD.html" , data)
-
+    return render(request, "Telangana/HYDERABAD.html" , data)
 
 def WARANGAL(request):
     warangaldata = Warangal.objects.all()
 
     data = {'title' : 'Travel India Info | Warangal',
         "warangaldata" : warangaldata}
-    return render(request, "WARANGAL.html" , data)
+    return render(request, "Telangana/WARANGAL.html" , data)
+
+
+
 
 
 # WEST places pages
@@ -750,7 +793,7 @@ def GUJARAT(request):
 
     data = {'title' : 'Travel India Info | Gujarat',
         "gujaratdata" : gujaratdata}
-    return render(request, "GUJARAT.html" , data)
+    return render(request, "Gujarat/GUJARAT.html" , data)
 
 
 def AHMEDABAD(request):
@@ -758,7 +801,7 @@ def AHMEDABAD(request):
 
     data = {'title' : 'Travel India Info | Ahmedabad',
         "ahmedabaddata" : ahmedabaddata}
-    return render(request, "AHMEDABAD.html" , data)
+    return render(request, "Gujarat/AHMEDABAD.html" , data)
 
 
 def KUTCH(request):
@@ -766,14 +809,14 @@ def KUTCH(request):
 
     data = {'title' : 'Travel India Info | Kutch',
         "kutchdata" : kutchdata}
-    return render(request, "KUTCH.html" , data)
+    return render(request, "Gujarat/KUTCH.html" , data)
 
 def VADODARA(request):
     vadodaradata = Vadodara.objects.all()
 
     data = {'title' : 'Travel India Info | Vadodara',
         "vadodaradata" : vadodaradata}
-    return render(request, "VADODARA.html" , data)
+    return render(request, "Gujarat/VADODARA.html" , data)
 
 
 
@@ -782,7 +825,7 @@ def HARYANA(request):
 
     data = {'title' : 'Travel India Info | Haryana',
         "haryanadata" : haryanadata}
-    return render(request, "HARYANA.html" , data)
+    return render(request, "Haryana/HARYANA.html" , data)
 
 
 def CHANDIGARH(request):
@@ -790,7 +833,7 @@ def CHANDIGARH(request):
 
     data = {'title' : 'Travel India Info | Chandigarh',
         "chandigarhdata" : chandigarhdata}
-    return render(request, "CHANDIGARH.html" , data)
+    return render(request, "Haryana/CHANDIGARH.html" , data)
 
 
 
@@ -800,7 +843,7 @@ def RAJASTHAN(request):
 
     data = {'title' : 'Travel India Info | Rajasthan',
         "rajasthandata" : rajasthandata}
-    return render(request, "RAJASTHAN.html" , data)
+    return render(request, "Rajasthan/RAJASTHAN.html" , data)
 
 
 def JAIPUR(request):
@@ -808,7 +851,7 @@ def JAIPUR(request):
 
     data = {'title' : 'Travel India Info | Jaipur',
         "jaipurdata" : jaipurdata}
-    return render(request, "JAIPUR.html" , data)
+    return render(request, "Rajasthan/JAIPUR.html" , data)
 
 
 def UDAIPUR(request):
@@ -816,7 +859,7 @@ def UDAIPUR(request):
 
     data = {'title' : 'Travel India Info | Udaipur',
         "udaipurdata" : udaipurdata}
-    return render(request, "UDAIPUR.html" , data)
+    return render(request, "Rajasthan/UDAIPUR.html" , data)
 
 
 def JAISALMER(request):
@@ -824,7 +867,7 @@ def JAISALMER(request):
 
     data = {'title' : 'Travel India Info | Jaisalmer',
         "jaisalmerdata" : jaisalmerdata}
-    return render(request, "JAISALMER.html" , data)
+    return render(request, "Rajasthan/JAISALMER.html" , data)
 
 
 def JODHPUR(request):
@@ -832,7 +875,7 @@ def JODHPUR(request):
 
     data = {'title' : 'Travel India Info | Jodhpur',
         "jodhpurdata" : jodhpurdata}
-    return render(request, "JODHPUR.html" , data)
+    return render(request, "Rajasthan/JODHPUR.html" , data)
 
 
 
@@ -841,7 +884,7 @@ def GOA(request):
 
     data = {'title' : 'Travel India Info | Goa',
         "goadata" : goadata}
-    return render(request, "GOA.html" , data)
+    return render(request, "Goa/GOA.html" , data)
 
 
 
@@ -850,7 +893,7 @@ def MAHARASHTRA(request):
 
     data = {'title' : 'Travel India Info | Maharashtra',
         "maharashtradata" : maharashtradata}
-    return render(request, "MAHARASHTRA.html" , data)
+    return render(request, "Maharashtra/MAHARASHTRA.html" , data)
 
 
 def MAHABALESHWAR(request):
@@ -858,7 +901,7 @@ def MAHABALESHWAR(request):
 
     data = {'title' : 'Travel India Info | Mahabaleshwar',
         "mahabaleshwardata" : mahabaleshwardata}
-    return render(request, "MAHABALESHWAR.html" , data)
+    return render(request, "Maharashtra/MAHABALESHWAR.html" , data)
 
 
 def MUMBAI(request):
@@ -866,7 +909,7 @@ def MUMBAI(request):
 
     data = {'title' : 'Travel India Info | Mumbai',
         "mumbaidata" : mumbaidata}
-    return render(request, "MUMBAI.html" , data)
+    return render(request, "Maharashtra/MUMBAI.html" , data)
 
 
 # Center pages
@@ -875,4 +918,4 @@ def NEWDelhi(request):
 
     data = {'title' : 'Travel India Info | New Delhi',
         "newdelhidata" : newdelhidata}
-    return render(request, "NewDelhi.html" , data)
+    return render(request, "New-Delhi/NewDelhi.html" , data)

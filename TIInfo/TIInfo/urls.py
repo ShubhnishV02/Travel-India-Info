@@ -36,7 +36,9 @@ urlpatterns = [
     path('book-a-guide/',views.BookGuide,name="book-a-guide"),
     path('savebookdetails/',views.saveBookingDetails,name="savebookdetails"),
     path('payment/',views.Payment,name="payment"),
-    path('feedback/',views.Feedback,name="feedback"),
+    path('feedback/',views.FEEDback,name="feedback"),
+    path('save-feedback/',views.saveFEEDback,name="save-feedback"),
+    path('thank-you/',views.Thankyou,name="thank-you"),
 
 
     path('mountains/',views.Mountains,name="mountains"),
