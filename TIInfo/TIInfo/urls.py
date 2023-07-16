@@ -33,6 +33,11 @@ urlpatterns = [
     path('privacypolicy/',views.PRIVACYpolicy,name="privacypolicy"),
     path('customerreview/',views.CUSTOMERReviews,name="customerreview"),
 
+
+    path('',include('authentication.urls')),
+    path('search/',views.SEARCH,name="search"),
+    
+
     path('book-a-guide/',views.BookGuide,name="book-a-guide"),
     path('savebookdetails/',views.saveBookingDetails,name="savebookdetails"),
     path('payment/',views.Payment,name="payment"),

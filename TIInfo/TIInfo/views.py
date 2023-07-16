@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from GuideBooking.models import Guide_Booking
 from django.contrib import messages
+from django.db.models import Q
 
 
 from JammuAndKashmir.models import JammuAndKashmir, Gulmarg , Srinagar, Pahalgam, Anantnag
@@ -81,6 +82,9 @@ def CUSTOMERReviews(request):
         
     }
     return render(request, "CustomerReviews.html", data)
+
+
+
 
 
 # index services
@@ -919,3 +923,338 @@ def NEWDelhi(request):
     data = {'title' : 'Travel India Info | New Delhi',
         "newdelhidata" : newdelhidata}
     return render(request, "New-Delhi/NewDelhi.html" , data)
+
+
+
+
+
+
+# For Searching the results in whole Model:
+
+def perform_search(query):
+
+    if not query or query.isspace():
+        return []  # Return an empty list if the query is empty or whitespace-only
+
+    allplaces = []
+    
+
+    # It is used for when user search a keyword and it gives the results as finding the keyword in Place name as well as the DESCRIPTION
+    # mumbai_places = Mumbai.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    # allplaces.extend(mumbai_places)         
+
+    
+# Retrieve data from Jammu & Kashmir model and extend the allplaces list
+    JammuandKashmir_places = JammuAndKashmir.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(JammuandKashmir_places)
+
+    gulmarg_places = Gulmarg.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(gulmarg_places)
+
+    srinagar_places = Srinagar.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(srinagar_places)
+
+    pahalgam_places = Pahalgam.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(pahalgam_places)
+
+    anantnag_places = Anantnag.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(anantnag_places)
+
+
+# Retrieve data from another model (e.g., Delhi)
+    delhi_places = NewDelhi.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(delhi_places)
+    
+
+# Retrieve data from Himachal Pradesh model and extend the allplaces list
+    himachal_places = Himachal.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(himachal_places)
+
+    manali_places = Manali.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(manali_places)
+
+    kasol_places = Kasol.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(kasol_places)
+
+    shimla_places = Shimla.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(shimla_places)
+
+    dalhousie_places = Dalhousie.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(dalhousie_places)
+
+
+# Retrieve data from Punjab model and extend the allplaces list
+    punjab_places = Punjab.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(punjab_places)
+
+    amritsar_places = Amritsar.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(amritsar_places)
+
+    pathankot_places = Pathankot.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(pathankot_places)
+
+    
+# Retrieve data from Uttar Pradesh model and extend the allplaces list
+    uttarpradesh_places = UttarPradesh.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(uttarpradesh_places)
+
+    agra_places = Agra.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(agra_places)
+
+    varanasi_places = Varanasi.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(varanasi_places)
+
+    vrindavan_places = Vrindavan.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(vrindavan_places)
+
+    lucknow_places = Lucknow.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(lucknow_places)
+
+    mathura_places = Mathura.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(mathura_places)
+
+    allahabad_places = Allahabad.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(allahabad_places)
+
+    ayodhya_places = Ayodhya.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(ayodhya_places)
+
+    meerut_places = Meerut.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(meerut_places)
+
+
+# Retrieve data from Uttarakhand model and extend the allplaces list
+    uttarakhand_places = Uttarakhand.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(uttarakhand_places)
+
+    rishikesh_places = Rishikesh.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(rishikesh_places)
+
+    auli_places = Auli.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(auli_places)
+
+    nainital_places = Nainital.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(nainital_places)
+
+    dehradun_places = Dehradun.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(dehradun_places)
+
+    mussoorie_places = Mussoorie.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(mussoorie_places)
+
+    haridwar_places = Haridwar.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(haridwar_places)
+
+    
+
+# Retrieve data from Assam model and extend the allplaces list
+    assam_places = Assam.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(assam_places)
+
+    majuli_places = Majuli.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(majuli_places)
+
+    guwahati_places = Guwahati.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(guwahati_places)
+
+
+# Retrieve data from Sikkim model and extend the allplaces list
+    sikkim_places = Sikkim.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(sikkim_places)
+
+    gangtok_places = Gangtok.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(gangtok_places)
+
+    westsikkim_places = WestSikkim.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(westsikkim_places)
+
+    northsikkim_places = NorthSikkim.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(northsikkim_places)
+
+
+# Retrieve data from Meghalaya model and extend the allplaces list
+    meghalaya_places = Meghalaya.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(meghalaya_places)
+
+    shillong_places = Shillong.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(shillong_places)
+
+    cherrapunji_places = Cherrapunji.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(cherrapunji_places)
+
+    williamnagar_places = Williamnagar.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(williamnagar_places)
+
+
+# Retrieve data from Arunachal Pradesh model and extend the allplaces list
+    arunachal_places = ArunachalPradesh.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(arunachal_places)
+
+    tawang_places = Tawang.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(tawang_places)
+
+    itanagar_places = Itanagar.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(itanagar_places)
+
+
+# Retrieve data from West Bengal model and extend the allplaces list
+    westbengal_places = WestBengal.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(westbengal_places)
+
+    kolkata_places = Kolkata.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(kolkata_places)
+
+    darjeeling_places = Darjeeling.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(darjeeling_places)
+
+    siliguri_places = Siliguri.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(siliguri_places)
+
+    sundarbans_places = Sundarbans.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(sundarbans_places)
+
+
+# Retrieve data from Andhra Pradesh model and extend the allplaces list
+    andhrapradesh_places = AndhraPradesh.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(andhrapradesh_places)
+
+    arakuvalley_places = ArakuValley.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(arakuvalley_places)
+
+    visakhapatnam_places = Visakhapatnam.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(visakhapatnam_places)
+
+    tirupati_places = Tirupati.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(tirupati_places)
+
+    anantapur_places = Anantapur.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(anantapur_places)
+
+    kurnool_places = Kurnool.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(kurnool_places)
+
+
+# Retrieve data from Karnataka model and extend the allplaces list
+    karnataka_places = Karnataka.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(karnataka_places)
+
+    coorg_places = Coorg.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(coorg_places)
+
+    badami_places = Badami.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(badami_places)
+
+    hampi_places = Hampi.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(hampi_places)
+
+
+# Retrieve data from Kerala model and extend the allplaces list
+    kerala_places = Kerala.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(kerala_places)
+
+    munnar_places = Munnar.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(munnar_places)
+
+    kumarakom_places = Kumarakom.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(kumarakom_places)
+
+
+# Retrieve data from Tamil Nadu model and extend the allplaces list
+    tamilnadu_places = TamilNadu.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(tamilnadu_places)
+
+    rameshwaram_places = Rameshwaram.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(rameshwaram_places)
+
+    yercaud_places = Yercaud.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(yercaud_places)
+
+    kodaikanal_places = Kodaikanal.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(kodaikanal_places)
+
+    ooty_places = Ooty.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(ooty_places)
+
+    chennai_places = Chennai.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(chennai_places)
+
+    
+# Retrieve data from Telangana model and extend the allplaces list
+    telangana_places = Telangana.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(telangana_places)
+
+    hyderabad_places = Hyderabad.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(hyderabad_places)
+
+    warangal_places = Warangal.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(warangal_places)
+
+
+# Retrieve data from Gujarat model and extend the allplaces list
+    gujarat_places = Gujarat.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(gujarat_places)
+
+    ahmedabad_places = Ahmedabad.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(ahmedabad_places)
+
+    kutch_places = Kutch.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(kutch_places)
+
+    vadodara_places = Vadodara.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(vadodara_places)
+
+
+# Retrieve data from Haryana model and extend the allplaces list
+    haryana_places = Haryana.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(haryana_places)
+
+    chandigarh_places = Chandigarh.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(chandigarh_places)
+
+
+# Retrieve data from Rajasthan model and extend the allplaces list
+    rajasthan_places = Rajasthan.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(rajasthan_places)
+
+    jaipur_places = Jaipur.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(jaipur_places)
+
+    udaipur_places = Udaipur.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(udaipur_places)
+
+    jaisalmer_places = Jaisalmer.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(jaisalmer_places)
+
+    jodhpur_places = Jodhpur.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(jodhpur_places)
+
+
+# Retrieve data from Goa model and extend the allplaces list
+    goa_places = Goa.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(goa_places)
+
+
+# Retrieve data from the Maharashtra model and extend the allplaces list
+    maharashtra_places = Maharashtra.objects.filter(Q(Place_name__icontains=query) | Q(Desc__icontains=query))
+    allplaces.extend(maharashtra_places)
+
+    mahabaleshwar_places = Mahabaleshwar.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(mahabaleshwar_places)
+
+    mumbai_places = Mumbai.objects.filter(Q(Place_name__icontains=query))
+    allplaces.extend(mumbai_places)
+
+    # now all the places which are mentioned above with filters are extended to allplaces variable and it stores in results.
+    results = allplaces
+    return results
+
+
+def SEARCH(request):
+    query = request.GET.get('query')
+    results = perform_search(query)
+    context = {
+        'query': query,
+        'results': results,
+    }
+    
+    return render(request, "SEARCH.html", context)

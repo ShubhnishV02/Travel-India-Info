@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{title}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/TIstyle.css">
+
+
+    <!-- Stars icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- bootstrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <!-- Toaster for message occur for some seconds-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    
+    <style>
+        .container {
+            max-width: 600px;
+        }
+        .img-fluid {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body class=" bg-body-secondary">
+
+    <header class="p-3 text-bg-dark">
+        <div class="container d-flex align-items-center justify-content-center">
+            <ul class="nav col-lg-auto mb-0">
+                <li><a href="{% url 'homepage' %}" class="nav-link px-2 text-white">Home</a></li>
+                <li><a href="{% url 'explore' %}" class="nav-link px-2 text-white">Explore</a></li>
+                <li><a href="{% url 'contactus' %}" class="nav-link px-2 text-white">Contact Us</a></li>
+                <li><a href="{% url 'faqs' %}" class="nav-link px-2 text-white">FAQs</a></li>
+                <li><a href="{% url 'aboutus' %}" class="nav-link px-2 text-white">About Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+<section class="container py-3">
+
+    {% for message in messages  %}
+    <div class="container d-flex align-items-center justify-content-center">
+    <div class="alert alert-{{ message.tags }} alert-danger dismissible fade show" role="alert">
+        <strong>{{ message }}</strong> 
+        <button type="button" class="close fs-4" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+      
+    {% comment %} script tag is used for close the button of messages which occur after login, logout and singup {% endcomment %}
+    <script>
+        const closeButtons = document.querySelectorAll('.alert .close');
+    
+        closeButtons.forEach((button) => {
+            button.addEventListener('click', function () {
+                const alert = this.closest('.alert');
+                alert.remove();
+            });
+        });
+    </script>
+
+    {% endfor %}
+
+
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <form class="form-signin" action="{% url 'signup' %}" method="POST">
+                {% csrf_token %}
+                <img class="mt-2 my-3 img-fluid" src="/static/img/logo_title.png" alt="" width="74%" height="57">
+                <h1 class="h3 mb-3 fw-normal">Create an Account</h1>
+                
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Create a Username (only letters and numbers)" required>
+                    <label for="floatingInput">Username</label>
+                </div>
+
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
+                    <label for="floatingInput">First Name</label>
+                </div>
+
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" required>
+                    <label for="floatingInput">Last Name</label>
+                </div>
+
+                <div class="form-floating mb-2">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                    <label for="floatingInput">Email address</label>
+                </div>
+
+                <div class="form-floating mb-2">
+                    <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Password" required>
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="form-floating mb-2">
+                    <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Confirm your Password" required> 
+                    <label for="floatingPassword">Confirm your Password</label>
+                </div>
+
+                <button class="btn btn-primary w-100 py-2 mb-3" type="submit">Sign Up</button>
+                <span style="font-size:14px;">already have an account ?<a href="{% url 'signin' %}" class="text-decoration-none mx-2 fw-semibold">SignIn</a></span>
+                <p class="mt-3 mb-3 text-body-secondary">Travel India Info © 2023</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

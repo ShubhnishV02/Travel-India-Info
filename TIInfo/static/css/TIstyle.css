@@ -2,8 +2,15 @@
 
 .logo_img {
     
-    height:4rem;
+    height:3.6rem;
 }
+
+.logo-title{
+    font-family: 'Satisfy';
+    color:darkgoldenrod;
+    text-shadow: 1px 3px 9px black;
+}
+
 
 .crosel_next{
     border-radius: 50%;

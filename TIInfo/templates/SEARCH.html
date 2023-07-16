@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block section %}
+<section>
+    <div class="container">
+        <h2>Search Results:</h2>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                {% for i in results %}
+                <div class="col-md-6">
+                    <div class="card mb-3 ">
+                        <img src="/media/{{i.Image}}" class="card-img-top my-2 container " alt="..."
+                            style="max-height: 470px;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{i.Place_name}}</h5>
+                            <p class="card-text" style="font-size:13px;">
+
+                                {{i.Desc | safe}}
+
+                            </p>
+
+                            <p class="mx-2" style="font-size:13px;"><small class="text-body-secondary">Last updated on
+                                    {{i.Pub_date}}</small></p>
+                            <!-- Example split danger button -->
+
+                            <div class=" d-flex mb-3">
+                                <div class="btn-group mx-2">
+                                    <button type="button" class="btn btn-info px-5 fs-6 fw-semibold">Details</button>
+                                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu p-3 text-secondary border-secondary bg-body-secondary"
+                                        style="width: 300px;">
+                                        <p class="fs-5 fw-semibold text-success">
+                                            Weather:
+                                        </p>
+                                        <div>
+                                            <h6>Best Time:</h6>
+                                            <p style="font-size:13px;">{{i.Best_Time}}</p>
+                                            <h6>Avoid Time:</h6>
+                                            <p style="font-size:13px;">{{i.Avoid_Time}}</p>
+                                            <h6>Ideal Duration:</h6>
+                                            <p style="font-size:13px;">{{i.Ideal_Duration}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="btn-group mx-1">
+                                    <button type="button" class="btn btn-info px-3 fs-6 fw-semibold">More</button>
+                                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu p-3 text-secondary border-secondary"
+                                        style="width: 400px; background-color: #ffeecc;">
+                                        <div>
+                                            {{i.More | safe}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                
+                <span>Your search - <b>{{query}} </b>- did not match any of the documents.</span> <br><br>
+            <ul> <b>Suggestions: </b>
+                <li>Make sure that all words are spelled correctly.</li>
+                <li>Try different keywords.</li>
+                <li>Do not make empty search.</li>
+                <li style="margin-bottom:21rem;">Try more general keywords.</li>
+            </ul>
+       
+                {% endfor %}
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+</section>
+{% endblock %}
