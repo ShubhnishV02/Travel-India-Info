@@ -1,143 +1,156 @@
 {% extends 'base.html' %}
 
-{% block section %}
+ {% block section %}
 
 
 <section class="container">
 
-{% comment %} side bar section {% endcomment %}
+    {% comment %} side bar section {% endcomment %}
 
     <div class="container mx-1 my-3">
-        <p style="color:gray; font-size:16.5px;padding-top:1rem;">HOME > CUSTOMER REVIEWS</p>
+        <p style="color:gray; font-size:16.5px;padding-top:1rem;"><a href="{% url 'homepage' %}" class="text-decoration-none">HOME</a> / CUSTOMER REVIEWS</p>
         <h2><img src="/static/img/customer.png" class="mx-2" width="6%">
             Read what our valued customers have to say about their experiences with<h1 class="text-center text-warning">
-                 Travel India Info.</h2></h3>
-            
+                Travel India Info.</h1>
+        </h2>
 
-                 <br><br>
+
+        <br><br>
 
     </div>
 
 
-<div class="container d-flex  justify-content-center">
-    <div class="row ">
-              
-        <div class="my-3 mx-3 customer-review-box " style="width: 20rem;background-color: #f1f17c;box-shadow: 1px 1px 8px black;">
-            <img src="/static/img/man-avatar2.png" class="customer-review-box img mt-3" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Mark T.</h5>
-                <div>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star-half-o checked"></span>
-                <span class="fa fa-star"></span>  
+    <div class="container d-flex  justify-content-center">
+        <div class="row ">
+
+            <div class="my-3 mx-3 customer-review-box " style="width: 20rem;background-color: #f1f17c;box-shadow: 1px 1px 8px black;">
+                <img src="/static/img/man-avatar2.png" class="customer-review-box img mt-3" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Mark T.</h5>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star-half-o checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p style="font-size:13px;">
+                        "Highly recommend Travel India Info! Their comprehensive guides made planning my family vacation
+                        a breeze. Their user-friendly website
+                        and responsive customer support added to the fantastic trip we had."
+                    </p>
                 </div>
-                <p style="font-size:13px;">
-                    "Highly recommend Travel India Info! Their comprehensive guides made planning my family vacation a breeze. Their user-friendly website 
-                    and responsive customer support added to the fantastic trip we had."
-                </p>
             </div>
-        </div>
 
 
-        <div class="my-3 mx-3 customer-review-box" style="width: 20rem;background-color: #f1f17c;box-shadow: 1px 1px 8px black;">
-            <img src="/static/img/man-avatar1.png" class="customer-review-box img mt-3" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">John S.</h5>
-                <div>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star-half-o checked"></span>
-                <span class="fa fa-star"></span>  
+            <div class="my-3 mx-3 customer-review-box"
+                style="width: 20rem;background-color: #f1f17c;box-shadow: 1px 1px 8px black;">
+                <img src="/static/img/man-avatar1.png" class="customer-review-box img mt-3" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">John S.</h5>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star-half-o checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p style="font-size:13px;">
+                        "Travel India Info helped me have an incredible journey in India. Their detailed guides and
+                        insider tips made my trip unforgettable!"
+                    </p>
                 </div>
-                <p style="font-size:13px;">
-                    "Travel India Info helped me have an incredible journey in India. Their detailed guides and insider tips made my trip unforgettable!"
-                </p>
             </div>
-        </div>
 
 
-        <div class="my-3 mx-3 customer-review-box" style="width: 20rem;background-color: #f1f17c;box-shadow: 1px 1px 8px black;">
-            <img src="/static/img/woman-avatar2.png" class="customer-review-box img mt-3" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Sarah K.</h5>
-                <div>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star-half-o checked"></span>
-                <span class="fa fa-star"></span>  
+            <div class="my-3 mx-3 customer-review-box"
+                style="width: 20rem;background-color: #f1f17c;box-shadow: 1px 1px 8px black;">
+                <img src="/static/img/woman-avatar2.png" class="customer-review-box img mt-3" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Sarah K.</h5>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star-half-o checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p style="font-size:13px;">
+                        "Planning my India trip was a breeze with Travel India Info. Their comprehensive information and
+                        historical context added meaning to my visits."
+                    </p>
                 </div>
-                <p style="font-size:13px;">
-                    "Planning my India trip was a breeze with Travel India Info. Their comprehensive information and historical context added meaning to my visits."
-                </p>
             </div>
+
         </div>
-    
+
+
     </div>
 
-    
-</div>
+    <div class="container d-flex  justify-content-center">
+        <div class="row">
+            <div class="my-3 mx-3 customer-review-box "
+                style="width: 20rem;background-color: #f1f17c;box-shadow: 1px 1px 8px black;">
+                <img src="/static/img/man-avatar3.png" class="customer-review-box img mt-3" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">David M.</h5>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star-half-o checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p style="font-size:13px;">
+                        "Travel India Info made my first-time travel to India easier. Their guides covered everything I
+                        needed to know, and their hidden gems recommendations added adventure to my trip."
+                    </p>
+                </div>
+            </div>
 
-<div class="container d-flex  justify-content-center">
-    <div class="row">
-<div class="my-3 mx-3 customer-review-box " style="width: 20rem;background-color: #f1f17c;box-shadow: 1px 1px 8px black;">
-    <img src="/static/img/man-avatar3.png" class="customer-review-box img mt-3" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">David M.</h5>
-        <div>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star-half-o checked"></span>
-        <span class="fa fa-star"></span>  
+
+            <div class="my-3 mx-3 customer-review-box"
+                style="width: 20rem; background-color: #f1f17c;box-shadow: 1px 1px 8px black;">
+                <img src="/static/img/woman-avatar2.png" class="customer-review-box img mt-3" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Emily H.</h5>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star-half-o checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p style="font-size:13px;">
+                        "Thanks to Travel India Info, my India trip was a success. Their well-researched guides and
+                        responsive team made all the difference."
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="my-3 mx-3 customer-review-box"
+                style="width: 20rem;background-color: #f1f17c;box-shadow: 1px 1px 8px black;">
+                <img src="/static/img/woman-avatar.png" class="customer-review-box img mt-3" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Olivia R.</h5>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star-half-o checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p style="font-size:13px;">"Travel India Info was invaluable for my solo trip to India. Their
+                        detailed guides and helpful tips
+                        ensured I felt prepared and supported throughout my journey. Thanks to them, I had a memorable
+                        experience exploring the wonders
+                        of India."</p>
+                </div>
+            </div>
+
         </div>
-        <p style="font-size:13px;">
-            "Travel India Info made my first-time travel to India easier. Their guides covered everything I needed to know, and their hidden gems recommendations added adventure to my trip."
-        </p>
     </div>
-</div>
-
-
-<div class="my-3 mx-3 customer-review-box" style="width: 20rem; background-color: #f1f17c;box-shadow: 1px 1px 8px black;">
-    <img src="/static/img/woman-avatar2.png" class="customer-review-box img mt-3" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Emily H.</h5>
-        <div>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star-half-o checked"></span>
-        <span class="fa fa-star"></span>  
-        </div>
-        <p style="font-size:13px;">
-            "Thanks to Travel India Info, my India trip was a success. Their well-researched guides and responsive team made all the difference."
-        </p>
-    </div>
-</div>
-
-
-<div class="my-3 mx-3 customer-review-box" style="width: 20rem;background-color: #f1f17c;box-shadow: 1px 1px 8px black;">
-    <img src="/static/img/woman-avatar.png" class="customer-review-box img mt-3" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Olivia R.</h5>
-        <div>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star-half-o checked"></span>
-        <span class="fa fa-star"></span>  
-        </div>
-        <p style="font-size:13px;">"Travel India Info was invaluable for my solo trip to India. Their detailed guides and helpful tips 
-            ensured I felt prepared and supported throughout my journey. Thanks to them, I had a memorable experience exploring the wonders 
-            of India."</p>
-    </div>
-</div>
-
-</div>
-</div>
 
 
 
@@ -147,3 +160,5 @@
 
 
 {% endblock %}
+
+</html>
